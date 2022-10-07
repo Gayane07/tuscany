@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+*,
+html,
+body,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+a {
+    color: #333333;
+    text-decoration: none;
+    transition: 0.2s;
+}
+a:hover {
+    color: #fa8b02;
+    transition: 0.2s;
+}
+
+ul[class],
+ol[class] {
+    list-style: none;
+    padding: 0;
+}
+
+.container {
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+.flex-between-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-end-center {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.flex-between-start {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.flex-center-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-col-between-start {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.flex-col-center-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background-color: #efefef;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+button {
+    background-color: white;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: inherit;
+    font-weight: inherit;
+}
