@@ -1,10 +1,16 @@
 <template>
-    <div>about us</div>
+    <div class="about-us" :style="{ paddingTop: headerHeight + 'px' }"></div>
 </template>
 
 <script>
 export default {
-    name: 'AboutUs'
+    name: 'AboutUs',
+    props: {
+        headerHeight: {
+            type: Number,
+            required: true,
+        },
+    },
 }
 </script>
 

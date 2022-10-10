@@ -101,6 +101,7 @@ export default {
                 cursor: pointer;
                 padding: 16px;
                 background: rgba(255, 255, 255, 0.4);
+                user-select: none;
                 &.active-tab {
                     background: #fff;
                     color: #fa8b02;

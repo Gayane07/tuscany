@@ -1,7 +1,10 @@
 <template>
     <div class="app">
         <Header />
-        <router-view class="app-page"></router-view>
+        <router-view
+            class="app-page"
+            :headerHeight="headerHeight"
+        ></router-view>
         <Footer />
     </div>
 </template>
@@ -13,19 +16,20 @@ import Footer from './components/footer/Footer'
 export default {
     name: 'App',
     components: { Header, Footer },
-    // data() {
-    //     return {
-    //         headerHeight: 155,
-    //     }
-    // },
-    // methods: {
-    //     getHeaderHeight() {
-    //       this.headerHeight = document.querySelector('nav').clientHeight
-    //     },
-    // },
-    // mounted() {
-    //     this.getHeaderHeight()
-    // },
+    data() {
+        return {
+            headerHeight: 155,
+        }
+    },
+    methods: {
+        getHeaderHeight() {
+            this.headerHeight = document.querySelector('nav').clientHeight
+        },
+    },
+    mounted() {
+        this.getHeaderHeight()
+        window.addEventListener('resize', this.getHeaderHeight) // Get the height when the user switches to landscape mode for example.
+    },
 }
 </script>
 
