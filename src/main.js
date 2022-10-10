@@ -9,7 +9,7 @@ import Vuelidate from 'vuelidate'
 
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://localhost:3000/'
+axios.defaults.baseURL = 'http://localhost:8080/'
 
 Vue.use(axios)
 Vue.use(VueI18n)
