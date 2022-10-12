@@ -28,7 +28,9 @@
                             :searchable="false"
                             @input="onChange"
                         ></v-select>
-                        <button class="nav-links__buttons--login" @click="authModalType = 'login'">{{ $t('login') }}</button>
+                        <button class="nav-links__buttons--login" @click="authModalType = 'login'">
+                            {{ $t('login') }}
+                        </button>
                         <PrimaryButton :label="$t('signUp')" @onClick="authModalType = 'register'" />
                     </div>
                 </div>
@@ -41,7 +43,6 @@
 </template>
 
 <script>
-import messages from '../../messages.json'
 import 'vue-select/dist/vue-select.css'
 
 // Components
@@ -51,7 +52,6 @@ import Auth from '@/views/authentication/Auth'
 
 export default {
     name: 'HeaderComponent',
-    i18n: { messages },
     components: { vSelect, PrimaryButton, Auth },
     data() {
         return {

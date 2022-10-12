@@ -38,12 +38,10 @@
 </template>
 
 <script>
-import messages from '../../messages.json'
 import footerItemsMixin from './footerItems.mixin.js'
 
 export default {
     name: 'FooterComponent',
-    i18n: { messages },
     mixins: [footerItemsMixin],
 }
 </script>

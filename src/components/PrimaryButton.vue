@@ -1,7 +1,15 @@
 <template>
-    <button class="primary flex-center-center" :disabled="disabled" @click="$emit('onClick')">
+    <button
+        class="primary flex-center-center"
+        :class="{ 'search-button': showSearchIcon }"
+        :disabled="disabled"
+        @click="$emit('onClick')"
+    >
         <span class="spinner" v-if="loading"></span>
-        <span v-else>{{ label }}</span>
+        <div v-else>
+            <span>{{ label }}</span>
+            <img v-if="showSearchIcon" src="@/assets/icons/search.svg" :alt="$t('searchIcon')" />
+        </div>
     </button>
 </template>
 
@@ -13,6 +21,10 @@ export default {
             type: String,
             required: true,
             default: 'Some text',
+        },
+        showSearchIcon: {
+            type: Boolean,
+            default: false,
         },
         disabled: {
             type: Boolean,
@@ -41,6 +53,12 @@ export default {
     &:disabled {
         background-color: #33333399;
         cursor: default;
+    }
+
+    &.search-button {
+        border-radius: 12px;
+        width: 80px;
+        height: 80px;
     }
 
     .spinner {
