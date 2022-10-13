@@ -1,0 +1,96 @@
+{
+    "homepage-data": {
+        "popularDestinations": [
+            {
+                "imgUrl": "https://picsum.photos/id/237/200/300",
+                "title": "Lucca Bike Tour",
+                "amount": {
+                    "currency": "Eur",
+                    "currencySymbol": "€",
+                    "amount": 34
+                },
+                "dateRange": "Every Day",
+                "peopleCount": {
+                    "min": 3,
+                    "max": 10
+                },
+                "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae voluptatum non, at quaerat fugiat iure natus! Magni doloremque dolores quas recusandae expedita dolorum officiis neque exercitationem eveniet aliquid a reprehenderit, debitis facilis molestias perspiciatis perferendis ad enim eligendi, sequi aut, ullam consectetur asperiores nisi. Voluptatem odit unde voluptatum officia quod."
+            },
+            {
+                "imgUrl": "https://picsum.photos/id/238/200/300",
+                "title": "Wine tasting In Tuscany",
+                "amount": {
+                    "currency": "Eur",
+                    "currencySymbol": "€",
+                    "amount": 34
+                },
+                "dateRange": "Monday",
+                "peopleCount": {
+                    "min": 10,
+                    "max": 30
+                },
+                "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae voluptatum non, at quaerat fugiat iure natus! Magni doloremque dolores quas recusandae expedita dolorum officiis neque exercitationem eveniet aliquid a reprehenderit, debitis facilis molestias perspiciatis perferendis ad enim eligendi, sequi aut, ullam consectetur asperiores nisi. Voluptatem odit unde voluptatum officia quod."
+            },
+            {
+                "imgUrl": "https://picsum.photos/id/239/200/300",
+                "title": "Cinque Terre Tour",
+                "amount": {
+                    "currency": "Eur",
+                    "currencySymbol": "€",
+                    "amount": 34
+                },
+                "dateRange": "To be decided",
+                "peopleCount": {
+                    "min": 10,
+                    "max": 50
+                },
+                "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae voluptatum non, at quaerat fugiat iure natus! Magni doloremque dolores quas recusandae expedita dolorum officiis neque exercitationem eveniet aliquid a reprehenderit, debitis facilis molestias perspiciatis perferendis ad enim eligendi, sequi aut, ullam consectetur asperiores nisi. Voluptatem odit unde voluptatum officia quod."
+            },
+            {
+                "imgUrl": "https://picsum.photos/id/240/200/300",
+                "title": "Lucca Bike Tour",
+                "amount": {
+                    "currency": "Eur",
+                    "currencySymbol": "€",
+                    "amount": 34
+                },
+                "dateRange": "To be decided",
+                "peopleCount": {
+                    "min": 5,
+                    "max": 10
+                },
+                "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae voluptatum non, at quaerat fugiat iure natus! Magni doloremque dolores quas recusandae expedita dolorum officiis neque exercitationem eveniet aliquid a reprehenderit, debitis facilis molestias perspiciatis perferendis ad enim eligendi, sequi aut, ullam consectetur asperiores nisi. Voluptatem odit unde voluptatum officia quod."
+            },
+            {
+                "imgUrl": "https://picsum.photos/id/241/200/300",
+                "title": "Lorem Ipsum",
+                "amount": {
+                    "currency": "usd",
+                    "currencySymbol": "$",
+                    "amount": 40
+                },
+                "dateRange": "Saturday",
+                "peopleCount": {
+                    "min": 8,
+                    "max": 12
+                },
+                "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae voluptatum non, at quaerat fugiat iure natus! Magni doloremque dolores quas recusandae expedita dolorum officiis neque exercitationem eveniet aliquid a reprehenderit, debitis facilis molestias perspiciatis perferendis ad enim eligendi, sequi aut, ullam consectetur asperiores nisi. Voluptatem odit unde voluptatum officia quod."
+            },
+            {
+                "imgUrl": "https://picsum.photos/id/242/200/300",
+                "title": "Dolor sit amet",
+                "amount": {
+                    "currency": "cny",
+                    "currencySymbol": "¥",
+                    "amount": 280
+                },
+                "dateRange": "Sunday",
+                "peopleCount": {
+                    "min": 6,
+                    "max": 10
+                },
+                "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae voluptatum non, at quaerat fugiat iure natus! Magni doloremque dolores quas recusandae expedita dolorum officiis neque exercitationem eveniet aliquid a reprehenderit, debitis facilis molestias perspiciatis perferendis ad enim eligendi, sequi aut, ullam consectetur asperiores nisi. Voluptatem odit unde voluptatum officia quod."
+            }
+        ]
+    }
+}

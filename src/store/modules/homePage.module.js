@@ -1,33 +1,64 @@
+import axios from 'axios'
+
 // State
 const state = () => ({
     homePage: {
         data: [],
         loading: false,
-        error: false
-    }
+        searchLoading: false,
+        error: false,
+    },
 })
 
 // Getters
 const getters = {
-    searchLoading: state => state.homePage.loading
+    homePageData: state => state.homePage.data,
+    homePageLoading: state => state.homePage.loading,
+    searchLoading: state => state.homePage.searchLoading,
+    homePageError: state => state.homePage.error,
 }
 
 // Mutations
 const mutations = {
-    setSearchLoading(state, value) {
+    setHomePageData(state, data) {
+        state.homePage.data = data
+    },
+    setHomePageLoading(state, value) {
         state.homePage.loading = value
-    }
+    },
+    setSearchLoading(state, value) {
+        state.homePage.searchLoading = value
+    },
+    setHomePageError(state, value) {
+        state.homePage.error = value
+    },
 }
 
 // Actions
 const actions = {
-    handleSearch({commit}, payload) {
+    fetchHomePageData({ commit }) {
+        commit('setHomePageLoading', true)
+        axios
+            .get('http://localhost:3000/homepage-data')
+            .then(response => {
+                commit('setHomePageData', response.data)
+                commit('setHomePageError', false)
+            })
+            .catch(error => {
+                commit('setHomePageError', true)
+            })
+            .finally(() => {
+                commit('setHomePageLoading', false)
+            })
+    },
+
+    handleSearch({ commit }, payload) {
         commit('setSearchLoading', true)
         // TODO
         setTimeout(() => {
             commit('setSearchLoading', false)
         }, 1000)
-    }
+    },
 }
 
 export default {

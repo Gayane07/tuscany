@@ -1,10 +1,18 @@
 {
     "en": {
+        "//CommonTranslations": "Most commonly used translations ----------",
+        "somethingWentWrong": "Something went wrong",
+        "tryAgain": "Try Again",
+        "image": "Image",
+        "from": "from",
+        "public": "Public",
+
         "logo": "Logo",
         "//Image alt attributes": "Image alt attributes translations ----------",
         "arrowBack": "Arrow back",
         "emailIcon": "Email icon",
         "checkIcon": "Check icon",
+        "mediaIcon": "Media Icon",
         "homePageImage": "Background image",
         "peopleIcon": "People icon",
         "dateIcon": "Date icon",
@@ -34,7 +42,6 @@
         "piazzaNapoleone": "Piazza Napoleone, Lucca, Tuscany",
         "phoneNumber": "+39 346 368 5708",
         "email": "italiainlimo@gmail.com",
-        "mediaIcon": "Media Icon",
         "socialMedia": "Social Media",
 
         "//Header": "Header translations ----------",
@@ -119,6 +126,7 @@
         "transferAndNCC": "Transfers & NCC",
         "luxuryExperience": "Luxury Experience",
         "selectTypes": "Select Types",
-        "types": "Types"
+        "types": "Types",
+        "exploreOurDestinations": "Explore Our Popular Destinations"
     }
 }

@@ -1,7 +1,7 @@
 <template>
     <button
         class="primary flex-center-center"
-        :class="{ 'search-button': showSearchIcon }"
+        :class="{ 'search-button': showSearchIcon, 'danger-button': danger }"
         :disabled="disabled"
         @click="$emit('onClick')"
     >
@@ -34,6 +34,10 @@ export default {
             type: Boolean,
             default: false,
         },
+        danger: {
+            type: Boolean,
+            default: false
+        }
     },
 }
 </script>
@@ -61,38 +65,11 @@ export default {
         height: 80px;
     }
 
-    .spinner {
-        animation: spin 1.5s infinite ease-in-out;
-        border-radius: 50%;
-        border-top: 2px solid #fff;
-        display: inline-block;
-        height: 20px;
-        width: 20px;
-        color: black;
-    }
-}
-
-@keyframes spin {
-    100% {
-        -webkit-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes dash {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    50% {
-        -webkit-transform: rotate(180deg);
-        transform: rotate(180deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
+    &.danger-button {
+        background-color: #fa2f02;
+        &:hover {
+            background-color: #d3300b;
+        }
     }
 }
 </style>
