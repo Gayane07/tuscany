@@ -7,6 +7,9 @@
         "from": "from",
         "public": "Public",
         "welcomeToOurSite": "Welcome to our site",
+        "incorrectNumber": "Incorrect number",
+        "fieldIsRequired": "Field is required",
+        "private": "Private",
 
         "//Image alt attributes": "Image alt attributes translations ----------",
         "logo": "Logo",
@@ -24,6 +27,7 @@
         "searchIcon": "Search icon",
         "typesIcon": "Types icon",
         "womanImage": "Woman image",
+        "bikeImage": "Bike image",
 
         "//Footer": "Footer translations ----------",
         "services": "Services",
@@ -61,7 +65,6 @@
         "signIn": "Sign In",
         "singInWithGoogle": "Sign In with Google",
         "dontHaveAccount": "Don’t have an account?",
-        "fieldIsRequired": "Field is required",
         "incorrectEmail": "Incorrect email",
         "minimumSymbols": "Minimum {n} symbols",
         "createAccount": "Create Account",
@@ -140,6 +143,12 @@
         "liveTheReal": "Live the real Lucchese experience by visiting the suburbs by bike!",
         "taxiService": "Taxi and NCC service",
         "doYouNeedNotOnly": "Do you need not only a bike but also a driver? Then you have found the right place!",
-        "busDescription": "Do you need not only a bike but also a driver? Then you have found the right place!"
+        "busDescription": "Do you need not only a bike but also a driver? Then you have found the right place!",
+        "bookNow": "Book Now",
+        "telephoneNumber": "Telephone Number",
+        "enterYourPhone": "Enter your telephone number",
+        "busPackage": "Bus Package",
+        "selectServiceType": "Select the service types",
+        "serviceType": "Service Type"
     }
 }

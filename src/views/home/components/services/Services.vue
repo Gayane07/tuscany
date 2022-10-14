@@ -46,6 +46,7 @@ export default {
     gap: 0 33px;
     &__item {
         gap: 20px 0;
+        max-width: 330px;
         img {
             width: 330px;
             height: 300px;
