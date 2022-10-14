@@ -120,7 +120,7 @@ export default {
             &:hover {
                 .cover {
                     img {
-                        transform: scale(1.05);
+                        transform: scale(1.08);
                         transition: 0.4s;
                     }
                 }

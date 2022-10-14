@@ -14,6 +14,17 @@
         <section class="container home__destination">
             <PopularDestinations :data="homePageData.popularDestinations" />
         </section>
+
+        <section class="container home__statistics">
+            <Statistics
+                :statistics="homePageData.statistics"
+                :imgUrl="require('@/assets/images/statistics/image-1.png')"
+                imageRadius="24"
+                imageWidth="400"
+                :title="$t('weAreTheBestCompany')"
+                :description="$t('afterDecidesOfExperience')"
+            />
+        </section>
     </div>
 </template>
 
@@ -24,19 +35,20 @@ import { mapActions, mapGetters } from 'vuex'
 import GenericError from '@/components/GenericError'
 import SearchSection from './components/search/SearchSection'
 import PopularDestinations from './components/popularDestionations/PopularDestinations'
+import Statistics from './components/statistics/Statistics'
 
 export default {
     name: 'HomePage',
-    components: { GenericError, SearchSection, PopularDestinations },
+    components: { GenericError, SearchSection, PopularDestinations, Statistics },
     methods: {
-        ...mapActions('homePageModule', ['fetchHomePageData'])
+        ...mapActions('homePageModule', ['fetchHomePageData']),
     },
     computed: {
-        ...mapGetters('homePageModule', ['homePageData', 'homePageLoading', 'homePageError'])
+        ...mapGetters('homePageModule', ['homePageData', 'homePageLoading', 'homePageError']),
     },
     created() {
         this.fetchHomePageData()
-    }
+    },
 }
 </script>
 
@@ -75,6 +87,10 @@ export default {
 
     &__destination {
         margin: 120px auto;
+    }
+
+    &__statistics {
+        margin-bottom: 140px;
     }
 }
 </style>

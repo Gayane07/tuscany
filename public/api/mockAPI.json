@@ -91,6 +91,12 @@
                 },
                 "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae voluptatum non, at quaerat fugiat iure natus! Magni doloremque dolores quas recusandae expedita dolorum officiis neque exercitationem eveniet aliquid a reprehenderit, debitis facilis molestias perspiciatis perferendis ad enim eligendi, sequi aut, ullam consectetur asperiores nisi. Voluptatem odit unde voluptatum officia quod."
             }
+        ],
+        "statistics": [
+            { "label": "Years Experience", "value": 20 },
+            { "label": "Happy Customer", "value": 100 },
+            { "label": "Choice of Services", "value": 15 },
+            { "label": "Professional Guides", "value": 10 }
         ]
     }
 }
