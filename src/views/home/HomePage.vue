@@ -29,6 +29,10 @@
         <section class="home__offer">
             <SpecialOffer />
         </section>
+
+        <section class="container home__services">
+            <Services />
+        </section>
     </div>
 </template>
 
@@ -41,10 +45,11 @@ import SearchSection from './components/search/SearchSection'
 import PopularDestinations from './components/popularDestionations/PopularDestinations'
 import Statistics from './components/statistics/Statistics'
 import SpecialOffer from './components/offers/SpecialOffer'
+import Services from './components/services/Services'
 
 export default {
     name: 'HomePage',
-    components: { GenericError, SearchSection, PopularDestinations, Statistics, SpecialOffer },
+    components: { GenericError, SearchSection, PopularDestinations, Statistics, SpecialOffer, Services },
     methods: {
         ...mapActions('homePageModule', ['fetchHomePageData']),
     },
@@ -102,6 +107,11 @@ export default {
         width: 100%;
         padding: 60px 0;
         background-image: linear-gradient(to right, #fda674, #ffcc9c, #fda674);
+    }
+
+    &__services {
+        margin-top: 120px;
+        margin-bottom: 80px;
     }
 }
 </style>

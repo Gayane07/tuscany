@@ -32,6 +32,9 @@ export default {
         position: absolute;
         right: 0;
         bottom: -60px; // Padding of section
+        width: 420px;
+        height: 600px;
+        object-fit: cover;
     }
     &__btn {
         font-size: 20px;
