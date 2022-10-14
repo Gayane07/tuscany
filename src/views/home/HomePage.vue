@@ -25,6 +25,10 @@
                 :description="$t('afterDecidesOfExperience')"
             />
         </section>
+
+        <section class="home__offer">
+            <SpecialOffer />
+        </section>
     </div>
 </template>
 
@@ -36,10 +40,11 @@ import GenericError from '@/components/GenericError'
 import SearchSection from './components/search/SearchSection'
 import PopularDestinations from './components/popularDestionations/PopularDestinations'
 import Statistics from './components/statistics/Statistics'
+import SpecialOffer from './components/offers/SpecialOffer'
 
 export default {
     name: 'HomePage',
-    components: { GenericError, SearchSection, PopularDestinations, Statistics },
+    components: { GenericError, SearchSection, PopularDestinations, Statistics, SpecialOffer },
     methods: {
         ...mapActions('homePageModule', ['fetchHomePageData']),
     },
@@ -90,7 +95,13 @@ export default {
     }
 
     &__statistics {
-        margin-bottom: 140px;
+        margin-bottom: 280px;
+    }
+
+    &__offer {
+        width: 100%;
+        padding: 60px 0;
+        background-image: linear-gradient(to right, #fda674, #ffcc9c, #fda674);
     }
 }
 </style>
