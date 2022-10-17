@@ -41,6 +41,10 @@
         <section class="container home__packages">
             <PopularPackages :packages="homePageData.packages" />
         </section>
+
+        <section class="container home__customers">
+            <CustomersSays :data="homePageData.customerSays" />
+        </section>
     </div>
 </template>
 
@@ -56,6 +60,7 @@ import SpecialOffer from './components/offers/SpecialOffer'
 import Services from './components/services/Services'
 import Book from './components/book/Book'
 import PopularPackages from './components/packages/PopularPackages.vue'
+import CustomersSays from './components/customers/CustomersSays'
 
 export default {
     name: 'HomePage',
@@ -67,7 +72,8 @@ export default {
     SpecialOffer,
     Services,
     Book,
-    PopularPackages
+    PopularPackages,
+    CustomersSays
 },
     methods: {
         ...mapActions('homePageModule', ['fetchHomePageData']),
@@ -137,6 +143,10 @@ export default {
     &__packages {
         margin-top: 150px;
         margin-bottom: 120px;
+    }
+
+    &__customers {
+        margin-bottom: 160px;
     }
 }
 </style>

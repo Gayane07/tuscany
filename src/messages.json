@@ -31,6 +31,8 @@
         "womanImage": "Woman image",
         "bikeImage": "Bike image",
         "packageImg": "Package image",
+        "userImg": "User Image",
+        "quoteIcon": "Quote icon",
 
         "//Footer": "Footer translations ----------",
         "services": "Services",
@@ -153,6 +155,7 @@
         "busPackage": "Bus Package",
         "selectServiceType": "Select the service types",
         "serviceType": "Service Type",
-        "popularPackages": "The Most Popular Packages"
+        "popularPackages": "The Most Popular Packages",
+        "happyCustomerSays": "Happy Customer Says"
     }
 }
