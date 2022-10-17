@@ -97,6 +97,72 @@
             { "label": "Happy Customer", "value": 100 },
             { "label": "Choice of Services", "value": 15 },
             { "label": "Professional Guides", "value": 10 }
+        ],
+        "packages": [
+            {
+                "id": "bike-rickshaw",
+                "imgUrl": "https://picsum.photos/id/255/200/300",
+                "title": "BIKE / RICKSHAW",
+                "amount": {
+                    "currency": "eur",
+                    "currencySymbol": "€",
+                    "value": 10
+                },
+                "options": [
+                    { "label": "Your Bike For A Day", "icon": { "name": "calendar", "width": 24, "height": 24 } },
+                    { "label": "City App", "icon": { "name":  "map", "width": 24, "height": 18 } },
+                    { "label": "Discount on Rickshaw", "icon": { "name": "count", "width": 24, "height": 15 } },
+                    { "label": "Guaranteed Support", "icon": { "name": "headphones", "width": 21, "height": 24 } }
+                ]
+            },
+            {
+                "id": "bike-tours",
+                "imgUrl": "https://picsum.photos/id/256/200/300",
+                "title": "BIKE TOURS",
+                "amount": {
+                    "currency": "eur",
+                    "currencySymbol": "€",
+                    "value": 30
+                },
+                "options": [
+                    { "label": "A Mountain Bike Included", "icon": { "name": "bike", "width": 24, "height": 21 } },
+                    { "label": "A Guide For You", "icon": { "name": "person", "width": 20, "height": 24 } },
+                    { "label": "Bottle of water", "icon": { "name": "bottle", "width": 9, "height": 24 } },
+                    { "label": "Guaranteed Support", "icon": { "name": "headphones", "width": 21, "height": 24 } }
+                ]
+            },
+            {
+                "id": "bus-trips",
+                "imgUrl": "https://picsum.photos/id/257/200/300",
+                "title": "BUS TRIPS",
+                "amount": {
+                    "currency": "eur",
+                    "currencySymbol": "€",
+                    "value": 45
+                },
+                "options": [
+                    { "label": "Park ticket", "icon": { "name": "ticket", "width": 24, "height": 17 } },
+                    { "label": "Return bus", "icon": { "name": "bus", "width": 24, "height": 22 } },
+                    { "label": "Companion", "icon": { "name": "companion", "width": 24, "height": 24 } },
+                    { "label": "Guaranteed Support", "icon": { "name": "headphones", "width": 21, "height": 24 } }
+                ]
+            },
+            {
+                "id": "transfer",
+                "imgUrl": "https://picsum.photos/id/258/200/300",
+                "title": "TRANSFER",
+                "amount": {
+                    "currency": "eur",
+                    "currencySymbol": "€",
+                    "value": 10
+                },
+                "options": [
+                    { "label": "Personal Driver", "icon": { "name": "driver", "width": 21, "height": 24 } },
+                    { "label": "Wherever You Want", "icon": { "name": "location", "width": 15, "height": 23 } },
+                    { "label": "At the best price", "icon": { "name": "like-hand", "width": 23, "height": 24 } },
+                    { "label": "Guaranteed Support", "icon": { "name": "headphones", "width": 21, "height": 24 } }
+                ]
+            }
         ]
     }
 }

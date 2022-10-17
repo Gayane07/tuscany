@@ -1,10 +1,7 @@
 <template>
     <div class="app">
         <Header />
-        <router-view
-            class="app-page"
-            :headerHeight="headerHeight"
-        ></router-view>
+        <router-view class="app-page" :headerHeight="headerHeight"></router-view>
         <Footer />
     </div>
 </template>
@@ -29,6 +26,11 @@ export default {
     mounted() {
         this.getHeaderHeight()
         window.addEventListener('resize', this.getHeaderHeight) // Get the height when the user switches to landscape mode for example.
+    },
+    watch: {
+        $route() {
+            window.scrollTo({ top: 0, behavior: 'auto' }) // Scroll to top after route change.
+        },
     },
 }
 </script>

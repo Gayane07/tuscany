@@ -15,7 +15,12 @@
                 <div class="flex-between-center nav-links">
                     <div class="flex-between-center nav-links__links">
                         <div class="pages-item" v-for="(link, index) in pages" :key="index">
-                            <router-link :to="{ name: link.url }">{{ link.name }}</router-link>
+                            <router-link
+                                :class="{ 'active-nested-route': link.active }"
+                                :to="{ name: link.url }"
+                            >
+                                {{ link.name }}
+                            </router-link>
                         </div>
                     </div>
                     <div class="flex-between-center nav-links__buttons">
@@ -58,10 +63,10 @@ export default {
             localLanguage: 'Eng',
             authModalType: '',
             pages: [
-                { name: this.$t('home'), url: 'home' },
-                { name: this.$t('aboutUs'), url: 'aboutUs' },
-                { name: this.$t('tourPackages'), url: 'tourPackages' },
-                { name: this.$t('contactUs'), url: 'contactUs' },
+                { name: this.$t('home'), url: 'home', path: 'home', active: false },
+                { name: this.$t('aboutUs'), url: 'aboutUs', path: 'about-us', active: false },
+                { name: this.$t('tourPackages'), url: 'tourPackages', path: 'tour-packages', active: false },
+                { name: this.$t('contactUs'), url: 'contactUs', path: 'contact-us', active: false },
             ],
             languages: [{ title: 'Eng', label: 'Eng' }],
         }
@@ -70,12 +75,27 @@ export default {
         onChange(item) {
             this.localLanguage = item.label
         },
+        resetActiveNestedTab() {
+            this.pages.forEach(item => (item.active = false))
+        },
+    },
+    watch: {
+        $route(to) {
+            if (!to.path.includes('tour-packages')) {
+                this.resetActiveNestedTab()
+            }
+            const tabname = to.path.split('/')[1]
+            if (tabname === 'tour-packages') {
+                this.pages.find(item => item.path === tabname).active = true
+            }
+        },
     },
 }
 </script>
 
 <style lang="scss" scoped>
-.router-link-exact-active {
+.router-link-exact-active,
+.active-nested-route {
     border-bottom: 3px solid #fa8b02;
 }
 

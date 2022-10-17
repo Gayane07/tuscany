@@ -10,6 +10,8 @@
         "incorrectNumber": "Incorrect number",
         "fieldIsRequired": "Field is required",
         "private": "Private",
+        "day": "day",
+        "icon": "Icon",
 
         "//Image alt attributes": "Image alt attributes translations ----------",
         "logo": "Logo",
@@ -28,6 +30,7 @@
         "typesIcon": "Types icon",
         "womanImage": "Woman image",
         "bikeImage": "Bike image",
+        "packageImg": "Package image",
 
         "//Footer": "Footer translations ----------",
         "services": "Services",
@@ -149,6 +152,7 @@
         "enterYourPhone": "Enter your telephone number",
         "busPackage": "Bus Package",
         "selectServiceType": "Select the service types",
-        "serviceType": "Service Type"
+        "serviceType": "Service Type",
+        "popularPackages": "The Most Popular Packages"
     }
 }

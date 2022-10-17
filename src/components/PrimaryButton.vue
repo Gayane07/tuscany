@@ -1,7 +1,7 @@
 <template>
     <button
         class="primary flex-center-center"
-        :class="{ 'search-button': showSearchIcon, 'danger-button': danger }"
+        :class="{ 'search-button': showSearchIcon, 'danger-button': danger, 'secondary-button': secondary }"
         :disabled="disabled"
         @click="$emit('onClick')"
     >
@@ -36,8 +36,12 @@ export default {
         },
         danger: {
             type: Boolean,
-            default: false
-        }
+            default: false,
+        },
+        secondary: {
+            type: Boolean,
+            default: false,
+        },
     },
 }
 </script>
@@ -69,6 +73,16 @@ export default {
         background-color: #fa2f02;
         &:hover {
             background-color: #d3300b;
+        }
+    }
+
+    &.secondary-button {
+        background-color: #fff;
+        border: 1px solid #fa8b02;
+        color: #fa8b02;
+        &:hover {
+            background-color: #fa8b02;
+            color: #fff;
         }
     }
 }

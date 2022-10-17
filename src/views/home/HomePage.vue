@@ -37,6 +37,10 @@
         <section class="home__book">
             <Book />
         </section>
+
+        <section class="container home__packages">
+            <PopularPackages :packages="homePageData.packages" />
+        </section>
     </div>
 </template>
 
@@ -51,18 +55,20 @@ import Statistics from './components/statistics/Statistics'
 import SpecialOffer from './components/offers/SpecialOffer'
 import Services from './components/services/Services'
 import Book from './components/book/Book'
+import PopularPackages from './components/packages/PopularPackages.vue'
 
 export default {
     name: 'HomePage',
     components: {
-        GenericError,
-        SearchSection,
-        PopularDestinations,
-        Statistics,
-        SpecialOffer,
-        Services,
-        Book,
-    },
+    GenericError,
+    SearchSection,
+    PopularDestinations,
+    Statistics,
+    SpecialOffer,
+    Services,
+    Book,
+    PopularPackages
+},
     methods: {
         ...mapActions('homePageModule', ['fetchHomePageData']),
     },
@@ -126,6 +132,11 @@ export default {
     &__services {
         margin-top: 120px;
         margin-bottom: 80px;
+    }
+
+    &__packages {
+        margin-top: 150px;
+        margin-bottom: 120px;
     }
 }
 </style>
