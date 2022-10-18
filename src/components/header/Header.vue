@@ -206,7 +206,7 @@ export default {
     .menu-icon {
         cursor: pointer;
         display: inline-block;
-        padding: 28px 20px;
+        padding: 28px;
         position: absolute;
         right: 0;
         user-select: none;

@@ -1,7 +1,7 @@
 <template>
     <div class="flex-col-between-start package">
         <h1>{{ $t('popularPackages') }}</h1>
-        <div class="flex-between-start full-width">
+        <div class="flex-between-start full-width wrapper">
             <div class="package__item" v-for="item in packages" :key="item.id">
                 <img class="package__item--img" :src="item.imgUrl" :alt="$t('packageImg')" />
                 <div class="flex-col-between-start package__info">
@@ -54,7 +54,7 @@ export default {
                 name: 'tourPackage',
                 params: { id },
             })
-        }
+        },
     },
 }
 </script>
@@ -123,6 +123,72 @@ export default {
             width: 100%;
             font-weight: 600;
             font-size: 20px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1359px) {
+    .package {
+        &__info {
+            h2 {
+                font-size: 18px;
+            }
+            &--amount {
+                h2 {
+                    font-size: 22px;
+                }
+                span {
+                    font-size: 14px;
+                    margin-top: -4px;
+                }
+                &::after {
+                    content: attr(data-after);
+                    position: absolute;
+                    right: -38px;
+                    bottom: 16px;
+                    font-size: 12px;
+                }
+            }
+            &--item {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .package {
+        h1 {
+            font-size: 28px;
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+    .package {
+        &__item {
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+}
+
+@media only screen and (max-width: 575px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .package {
+        &__item {
+            width: 100%;
         }
     }
 }

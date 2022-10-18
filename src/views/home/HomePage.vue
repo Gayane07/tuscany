@@ -42,9 +42,9 @@
             <PopularPackages :packages="homePageData.packages" />
         </section>
 
-        <section class="container home__customers">
+        <!-- <section class="container home__customers">
             <CustomersSays :data="homePageData.customerSays" />
-        </section>
+        </section> -->
     </div>
 </template>
 
