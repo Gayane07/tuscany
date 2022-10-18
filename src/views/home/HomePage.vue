@@ -15,7 +15,7 @@
             <PopularDestinations :data="homePageData.popularDestinations" />
         </section>
 
-        <section class="container home__statistics">
+        <!-- <section class="container home__statistics">
             <Statistics
                 :statistics="homePageData.statistics"
                 :imgUrl="require('@/assets/images/statistics/image-1.png')"
@@ -44,7 +44,7 @@
 
         <section class="container home__customers">
             <CustomersSays :data="homePageData.customerSays" />
-        </section>
+        </section> -->
     </div>
 </template>
 
@@ -148,5 +148,25 @@ export default {
     &__customers {
         margin-bottom: 160px;
     }
+}
+
+@media only screen and (max-width: 1359px) {
+    .home {
+        &__destination {
+            margin-top: 50px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+}
+
+@media only screen and (max-width: 991px) {
+}
+
+@media only screen and (max-width: 767px) {
+}
+
+@media only screen and (max-width: 575px) {
 }
 </style>

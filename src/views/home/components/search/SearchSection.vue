@@ -130,4 +130,65 @@ export default {
         }
     }
 }
+
+@media only screen and (max-width: 1359px) {
+    .search {
+        &__block {
+            width: 80%;
+        }
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .search {
+        &__block {
+            width: 85%;
+            padding: 12px;
+            &--tabs {
+                &__item {
+                    padding: 10px;
+                    font-size: 16px;
+                }
+            }
+            &--content {
+                padding: 8px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .search {
+        &__title {
+            padding: 0 16px;
+            h1 {
+                font-size: 62px;
+            }
+            h2 {
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+}
+
+@media only screen and (max-width: 575px) {
+    .search {
+        margin-top: -40px;
+        &__title {
+            h1 {
+                font-size: 48px;
+            }
+            h2 {
+                font-size: 18px;
+            }
+        }
+        &__block {
+            margin-top: -30px;
+            width: 95%;
+        }
+    }
+}
 </style>

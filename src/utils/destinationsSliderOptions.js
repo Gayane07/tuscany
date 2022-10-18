@@ -7,7 +7,7 @@ export const sliderOptions = {
     gap: '33px',
     cover: true,
     lazyLoad: 'nearby',
-    autoplay: true,
+    autoplay: false,
     interval: 4000,
     speed: 1000,
     breakpoints: {

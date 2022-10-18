@@ -1,91 +1,93 @@
 <template>
-    <div class="flex-between-center full-width">
-        <div class="item">
-            <div class="flex-start-center item__title">
-                <img src="@/assets/icons/date.svg" :alt="$t('dateIcon')" />
-                <span>{{ $t('date') }}</span>
+    <div class="flex-between-center full-width public">
+        <div class="flex-between-center full-width item__wrapper">
+            <div class="item">
+                <div class="flex-start-center item__title">
+                    <img src="@/assets/icons/date.svg" :alt="$t('dateIcon')" />
+                    <span>{{ $t('date') }}</span>
+                </div>
+                <div class="flex-end-center full-width item__date">
+                    <VueDatePicker
+                        class="item__date-picker"
+                        v-model="payload.date"
+                        no-calendar-icon
+                        no-header
+                        fullscreen-mobile
+                        color="#fa8b02"
+                        :locale="{ lang: locale }"
+                        :placeholder="$t('chooseDate')"
+                        @onOpen="
+                            isDatepickerOpened = true
+                            setDatepickerMenuStyles()
+                        "
+                        @onClose="isDatepickerOpened = false"
+                    />
+                    <img
+                        :class="{ rotated: isDatepickerOpened }"
+                        src="@/assets/icons/arrow-down.svg"
+                        :alt="$t('arrowDown')"
+                    />
+                </div>
             </div>
-            <div class="flex-end-center full-width item__date">
-                <VueDatePicker
-                    class="item__date-picker"
-                    v-model="payload.date"
-                    no-calendar-icon
-                    no-header
-                    fullscreen-mobile
-                    color="#fa8b02"
-                    :locale="{ lang: locale }"
-                    :placeholder="$t('chooseDate')"
-                    @onOpen="
-                        isDatepickerOpened = true
-                        setDatepickerMenuStyles()
-                    "
-                    @onClose="isDatepickerOpened = false"
-                />
-                <img
-                    :class="{ rotated: isDatepickerOpened }"
-                    src="@/assets/icons/arrow-down.svg"
-                    :alt="$t('arrowDown')"
-                />
-            </div>
-        </div>
 
-        <div class="item">
-            <div class="flex-start-center item__title">
-                <img src="@/assets/icons/clock.svg" :alt="$t('clockIcon')" />
-                <span>{{ $t('time') }}</span>
+            <div class="item">
+                <div class="flex-start-center item__title">
+                    <img src="@/assets/icons/clock.svg" :alt="$t('clockIcon')" />
+                    <span>{{ $t('time') }}</span>
+                </div>
+                <div class="flex-end-center full-width">
+                    <v-select
+                        class="item__select"
+                        :class="{ 'with-value': selectedLabels.time }"
+                        :options="timeOptions"
+                        :value="selectedLabels.time"
+                        :placeholder="$t('chooseTime')"
+                        :clearable="false"
+                        :filterable="false"
+                        :searchable="false"
+                        @input="item => onChange(item, 'time')"
+                    ></v-select>
+                </div>
             </div>
-            <div class="flex-end-center full-width">
-                <v-select
-                    class="item__select"
-                    :class="{ 'with-value': selectedLabels.time }"
-                    :options="timeOptions"
-                    :value="selectedLabels.time"
-                    :placeholder="$t('chooseTime')"
-                    :clearable="false"
-                    :filterable="false"
-                    :searchable="false"
-                    @input="item => onChange(item, 'time')"
-                ></v-select>
-            </div>
-        </div>
 
-        <div class="item">
-            <div class="flex-start-center item__title">
-                <img src="@/assets/icons/tour.svg" :alt="$t('tourIcon')" />
-                <span>{{ $t('tour') }}</span>
+            <div class="item">
+                <div class="flex-start-center item__title">
+                    <img src="@/assets/icons/tour.svg" :alt="$t('tourIcon')" />
+                    <span>{{ $t('tour') }}</span>
+                </div>
+                <div class="flex-end-center full-width">
+                    <v-select
+                        class="item__select"
+                        :class="{ 'with-value': selectedLabels.tour }"
+                        :options="tourOptions"
+                        :value="selectedLabels.tour"
+                        :placeholder="$t('selectTour')"
+                        :clearable="false"
+                        :filterable="false"
+                        :searchable="false"
+                        @input="item => onChange(item, 'tour')"
+                    ></v-select>
+                </div>
             </div>
-            <div class="flex-end-center full-width">
-                <v-select
-                    class="item__select"
-                    :class="{ 'with-value': selectedLabels.tour }"
-                    :options="tourOptions"
-                    :value="selectedLabels.tour"
-                    :placeholder="$t('selectTour')"
-                    :clearable="false"
-                    :filterable="false"
-                    :searchable="false"
-                    @input="item => onChange(item, 'tour')"
-                ></v-select>
-            </div>
-        </div>
 
-        <div class="item">
-            <div class="flex-start-center item__title">
-                <img src="@/assets/icons/types.svg" :alt="$t('typesIcon')" />
-                <span>{{ $t('types') }}</span>
-            </div>
-            <div class="flex-end-center full-width">
-                <v-select
-                    class="item__select"
-                    :class="{ 'with-value': selectedLabels.types }"
-                    :options="typesOptions"
-                    :value="selectedLabels.types"
-                    :placeholder="$t('selectTypes')"
-                    :clearable="false"
-                    :filterable="false"
-                    :searchable="false"
-                    @input="item => onChange(item, 'types')"
-                ></v-select>
+            <div class="item">
+                <div class="flex-start-center item__title">
+                    <img src="@/assets/icons/types.svg" :alt="$t('typesIcon')" />
+                    <span>{{ $t('types') }}</span>
+                </div>
+                <div class="flex-end-center full-width">
+                    <v-select
+                        class="item__select"
+                        :class="{ 'with-value': selectedLabels.types }"
+                        :options="typesOptions"
+                        :value="selectedLabels.types"
+                        :placeholder="$t('selectTypes')"
+                        :clearable="false"
+                        :filterable="false"
+                        :searchable="false"
+                        @input="item => onChange(item, 'types')"
+                    ></v-select>
+                </div>
             </div>
         </div>
 
@@ -146,6 +148,10 @@ export default {
     padding: 16px;
     gap: 24px;
     width: 100%;
+    min-width: 220px;
+    &__wrapper {
+        overflow-x: auto;
+    }
     &:not(:last-child)::after {
         position: absolute;
         content: '';
@@ -168,6 +174,7 @@ export default {
             font-weight: 600;
             font-size: 18px;
             color: #333333;
+            white-space: nowrap;
         }
     }
 
@@ -176,6 +183,7 @@ export default {
         ::v-deep {
             .vs__dropdown-toggle {
                 border: none;
+                background: transparent;
             }
             input {
                 color: #33333333;
@@ -237,6 +245,70 @@ export default {
                     font-weight: 600;
                     font-size: 18px;
                 }
+            }
+        }
+    }
+}
+
+.search-btn {
+    border-radius: 13px;
+    box-shadow: -7px 0px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+@media only screen and (max-width: 1599px) {
+}
+
+@media only screen and (max-width: 1359px) {
+}
+
+@media only screen and (max-width: 1199px) {
+    .item {
+        padding: 10px;
+        &__title {
+            span {
+                font-size: 16px;
+            }
+        }
+        &__select {
+            ::v-deep {
+                input {
+                    font-size: 16px;
+                }
+            }
+        }
+        &__date {
+            ::v-deep {
+                input {
+                    font-size: 16px !important;
+                }
+                .vd-picker__controls {
+                    &-wrapper {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+}
+
+@media only screen and (max-width: 767px) {
+}
+
+@media only screen and (max-width: 575px) {
+    .public {
+        flex-direction: column;
+    }
+    .search-btn {
+        width: 100%;
+        margin-top: 16px;
+        ::v-deep {
+            button {
+                box-shadow: none;
+                width: 100% !important;
+                height: 40px !important;
             }
         }
     }

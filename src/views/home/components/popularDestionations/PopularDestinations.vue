@@ -71,7 +71,25 @@ export default {
     },
     data() {
         return {
-            options: sliderOptions,
+            options: { ...sliderOptions },
+        }
+    },
+    created() {
+        this.options.breakpoints = {
+            1359: {
+                perPage: 4,
+            },
+            1199: {},
+            991: {
+                perPage: 3,
+            },
+            767: {},
+            575: {
+                perPage: 2,
+            },
+            420: {
+                perPage: 1,
+            },
         }
     },
 }
@@ -175,6 +193,109 @@ export default {
                     display: -webkit-box;
                     -webkit-line-clamp: 2;
                     -webkit-box-orient: vertical;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1359px) {
+    .carousel {
+        &__title {
+            h1 {
+                font-size: 28px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+}
+
+@media only screen and (max-width: 991px) {
+    .carousel {
+        &__slide {
+            &--card {
+                .cover {
+                    max-height: 350px;
+                }
+                &__info {
+                    h2 {
+                        font-size: 22px;
+                    }
+                    bdi {
+                        font-size: 16px;
+                    }
+                    &--amount {
+                        font-size: 22px !important;
+                    }
+                    span,
+                    div.description {
+                        font-size: 14px;
+                    }
+                    &--days {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .carousel {
+        &__slide {
+            ::v-deep {
+                .splide__arrows {
+                    top: -16px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    button {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .carousel {
+        &__slide {
+            &--card {
+                .cover {
+                    max-height: 300px;
+                    img {
+                        width: 100%;
+                        height: 300px;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .carousel {
+        &__slide {
+            ::v-deep {
+                .splide__arrows {
+                    top: 150px;
+                    button.splide__arrow {
+                        position: relative;
+                        &.splide__arrow--prev {
+                            left: -10px;
+                        }
+                        &.splide__arrow--next {
+                            right: -10px;
+                        }
+                    }
                 }
             }
         }
