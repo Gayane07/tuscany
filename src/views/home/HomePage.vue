@@ -15,7 +15,7 @@
             <PopularDestinations :data="homePageData.popularDestinations" />
         </section>
 
-        <!-- <section class="container home__statistics">
+        <section class="container home__statistics">
             <Statistics
                 :statistics="homePageData.statistics"
                 :imgUrl="require('@/assets/images/statistics/image-1.png')"
@@ -26,7 +26,7 @@
             />
         </section>
 
-        <section class="home__offer">
+        <!-- <section class="home__offer">
             <SpecialOffer />
         </section>
 
@@ -154,6 +154,9 @@ export default {
     .home {
         &__destination {
             margin-top: 50px;
+        }
+        &__statistics {
+            margin-bottom: 200px;
         }
     }
 }
