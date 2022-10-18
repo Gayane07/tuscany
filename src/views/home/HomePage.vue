@@ -26,7 +26,7 @@
             />
         </section>
 
-        <!-- <section class="home__offer">
+        <section class="home__offer">
             <SpecialOffer />
         </section>
 
@@ -44,7 +44,7 @@
 
         <section class="container home__customers">
             <CustomersSays :data="homePageData.customerSays" />
-        </section> -->
+        </section>
     </div>
 </template>
 
@@ -65,16 +65,16 @@ import CustomersSays from './components/customers/CustomersSays'
 export default {
     name: 'HomePage',
     components: {
-    GenericError,
-    SearchSection,
-    PopularDestinations,
-    Statistics,
-    SpecialOffer,
-    Services,
-    Book,
-    PopularPackages,
-    CustomersSays
-},
+        GenericError,
+        SearchSection,
+        PopularDestinations,
+        Statistics,
+        SpecialOffer,
+        Services,
+        Book,
+        PopularPackages,
+        CustomersSays,
+    },
     methods: {
         ...mapActions('homePageModule', ['fetchHomePageData']),
     },
@@ -165,6 +165,11 @@ export default {
 }
 
 @media only screen and (max-width: 991px) {
+    .home {
+        &__statistics {
+            margin-bottom: 60px;
+        }
+    }
 }
 
 @media only screen and (max-width: 767px) {

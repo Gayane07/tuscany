@@ -62,4 +62,59 @@ export default {
         }
     }
 }
+
+@media only screen and (max-width: 1359px) {
+}
+
+@media only screen and (max-width: 1199px) {
+    .offer {
+        img {
+            width: 360px;
+            height: 500px;
+        }
+        &__info {
+            max-width: 500px;
+            h1 {
+                font-size: 28px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .offer {
+        flex-direction: column-reverse;
+        img {
+            position: static;
+            margin-bottom: 24px;
+        }
+        &__info {
+            max-width: 100%;
+            h1 {
+                font-size: 28px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .offer {
+        img {
+            width: 300px;
+            height: 410px;
+        }
+    }
+}
+
+@media only screen and (max-width: 575px) {
+}
+
+@media only screen and (max-width: 420px) {
+}
 </style>
