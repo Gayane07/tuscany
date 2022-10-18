@@ -1,31 +1,28 @@
 <template>
-    <nav>
+    <header class="header">
         <div class="container">
             <div class="flex-between-center">
-                <div class="logo cursor-pointer">
-                    <img
-                        src="@/assets/icons/logo.svg"
-                        :alt="$t('logo')"
-                        width="133"
-                        height="130"
-                        @click="$router.push('/')"
-                    />
-                </div>
+                <img
+                    class="cursor-pointer header__logo"
+                    src="@/assets/icons/logo.svg"
+                    :alt="$t('logo')"
+                    width="133"
+                    height="130"
+                    @click="$router.push('/')"
+                />
+                <input class="menu-btn" type="checkbox" id="menu-btn" />
+                <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+                <ul class="menu flex-between-center">
+                    <li v-for="(link, index) in pages" :key="index">
+                        <router-link :class="{ 'active-nested-route': link.active }" :to="{ name: link.url }">
+                            {{ link.name }}
+                        </router-link>
+                    </li>
 
-                <div class="flex-between-center nav-links">
-                    <div class="flex-between-center nav-links__links">
-                        <div class="pages-item" v-for="(link, index) in pages" :key="index">
-                            <router-link
-                                :class="{ 'active-nested-route': link.active }"
-                                :to="{ name: link.url }"
-                            >
-                                {{ link.name }}
-                            </router-link>
-                        </div>
-                    </div>
-                    <div class="flex-between-center nav-links__buttons">
+                    <li class="auth">
                         <v-select
                             class="nav-links__buttons--select"
+                            appendToBody
                             :options="languages"
                             :value="localLanguage"
                             :clearable="false"
@@ -33,18 +30,20 @@
                             :searchable="false"
                             @input="onChange"
                         ></v-select>
-                        <button class="nav-links__buttons--login" @click="authModalType = 'login'">
+                    </li>
+                    <li class="auth">
+                        <button class="login" @click="authModalType = 'login'">
                             {{ $t('login') }}
                         </button>
+                    </li>
+                    <li class="auth">
                         <PrimaryButton :label="$t('signUp')" @onClick="authModalType = 'register'" />
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="divider"></div>
-
         <Auth :type="authModalType" @close="authModalType = ''" />
-    </nav>
+    </header>
 </template>
 
 <script>
@@ -99,85 +98,208 @@ export default {
     border-bottom: 3px solid #fa8b02;
 }
 
-nav {
+.nav-links__buttons--select {
+    width: 70px;
+    ::v-deep {
+        .vs__dropdown-toggle {
+            cursor: pointer;
+            border: none;
+            background: transparent;
+        }
+        input {
+            display: none;
+        }
+        &.vs--open {
+            input {
+                display: block;
+            }
+        }
+        span.vs__selected {
+            color: #33333380;
+        }
+        .vs__dropdown-menu {
+            margin-top: 10px;
+        }
+    }
+}
+.header {
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.05);
     position: fixed;
-    z-index: 99;
     width: 100%;
+    z-index: 99;
     font-size: 20px;
     font-weight: 600;
     padding: 20px 0 0 0;
     background: rgba(255, 255, 255, 0.8);
-    .nav-links {
-        gap: 167px;
-        &__links {
-            gap: 40px;
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+        background-color: transparent;
+        li {
+            a {
+                display: block;
+                margin-right: 40px;
+                width: max-content;
+            }
+            &.auth {
+                margin-left: 24px;
+                button.login {
+                    background-color: transparent;
+                }
+            }
         }
-        &__buttons {
-            gap: 26px;
-            &--select {
-                width: 70px;
-                ::v-deep {
-                    .vs__dropdown-toggle {
-                        cursor: pointer;
-                        border: none;
+    }
+    .menu-btn {
+        &:hover {
+            background-color: #f4f4f4;
+        }
+        display: none;
+        &:checked {
+            ~ {
+                .menu {
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    z-index: 5;
+                    margin-top: 40px;
+                    padding: 20px 50px 0 20px;
+                    max-height: 350px;
+                    width: 300px;
+                    overflow-y: auto;
+                    background-color: #fff;
+                    li {
+                        margin: 0 0 15px 0;
+                    }
+                }
+                .menu-icon {
+                    .navicon {
                         background: transparent;
-                    }
-                    input {
-                        display: none;
-                    }
-                    &.vs--open {
-                        input {
-                            display: block;
+                        &:before {
+                            transform: rotate(-45deg);
+                        }
+                        &:after {
+                            transform: rotate(45deg);
                         }
                     }
-                    span.vs__selected {
-                        color: #33333380;
-                    }
-                    .vs__dropdown-menu {
-                        margin-top: 10px;
+                    &:not(.steps) {
+                        .navicon {
+                            &:before {
+                                top: 0;
+                            }
+                            &:after {
+                                top: 0;
+                            }
+                        }
                     }
                 }
             }
-            &--login {
-                background: transparent;
+        }
+    }
+    .menu {
+        clear: both;
+        max-height: 0;
+        // transition: max-height 0.2s ease-out;
+    }
+    .menu-icon {
+        cursor: pointer;
+        display: inline-block;
+        padding: 28px 20px;
+        position: absolute;
+        right: 0;
+        user-select: none;
+        z-index: 10;
+        .navicon {
+            background: #333;
+            display: block;
+            height: 2.5px;
+            position: relative;
+            // transition: background 0.2s ease-out;
+            width: 22px;
+            &:before {
+                background: #333;
+                content: '';
+                display: block;
+                height: 100%;
+                position: absolute;
+                transition: all 0.2s ease-out;
+                width: 100%;
+                top: 5px;
             }
+            &:after {
+                background: #333;
+                content: '';
+                display: block;
+                height: 100%;
+                position: absolute;
+                transition: all 0.2s ease-out;
+                width: 100%;
+                top: -5px;
+            }
+        }
+    }
+}
+@media (min-width: 991px) {
+    .header {
+        .menu {
+            clear: none;
+            float: right;
+            max-height: none;
+        }
+        .menu-icon {
+            display: none;
         }
     }
 }
 
 @media only screen and (max-width: 1599px) {
-    nav {
-        font-size: 18px;
-        .nav-links {
-            gap: 140px;
-            &__links {
-                gap: 30px;
-            }
-            &__buttons {
-                gap: 20px;
-            }
-        }
-    }
-    .logo {
-        img {
-            width: 120px;
-            height: 117px;
+    .header {
+        &__logo {
+            width: 100px;
+            height: 97px;
         }
     }
 }
 
 @media only screen and (max-width: 1359px) {
-}
-
-@media only screen and (max-width: 1199px) {
+    .header {
+        font-size: 16px;
+        ul {
+            li {
+                a {
+                    margin-right: 30px;
+                }
+                &.auth {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 991px) {
+    .header {
+        &__logo {
+            width: 80px;
+            height: 78px;
+        }
+    }
 }
 
-@media only screen and (max-width: 767px) {
-}
-
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 576px) {
+    .header {
+        padding-top: 10px;
+        &__logo {
+            width: 58px;
+            height: 56px;
+        }
+        .menu-btn:checked ~ .menu {
+            width: 100%;
+            margin-top: 0;
+            padding-top: 60px;
+        }
+    }
 }
 </style>

@@ -20,7 +20,7 @@ export default {
     },
     methods: {
         getHeaderHeight() {
-            this.headerHeight = document.querySelector('nav').clientHeight
+            this.headerHeight = document.querySelector('header').clientHeight
         },
     },
     mounted() {

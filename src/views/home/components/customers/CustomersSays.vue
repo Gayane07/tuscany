@@ -15,9 +15,11 @@
                         <img src="@/assets/icons/quote.svg" :alt="$t('quoteIcon')" class="quote" />
                     </div>
                     <div class="flex-start-center">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit deleniti iusto sequi
-                        ratione dicta sint, distinctio officia debitis, amet doloribus necessitatibus ipsa
-                        tenetur? In amet nam placeat recusandae, incidunt accusamus.
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit deleniti iusto sequi
+                            ratione dicta sint, distinctio officia debitis, amet doloribus necessitatibus ipsa
+                            tenetur? In amet nam placeat recusandae, incidunt accusamus.
+                        </p>
                     </div>
                     <div class="flex-end-center">
                         <img src="@/assets/icons/quote.svg" :alt="$t('quoteIcon')" class="quote" />
@@ -101,6 +103,11 @@ export default {
             background: #ffffff;
             border: 1px solid #efefef;
             border-radius: 24px;
+            p {
+                font-weight: 400;
+                font-size: 18px;
+                color: #000;
+            }
             &__user {
                 img {
                     width: 80px;
@@ -118,6 +125,9 @@ export default {
             .quote {
                 filter: opacity(0.08);
                 margin: 10px 0;
+            }
+            p {
+                padding: 0 24px;
             }
         }
     }
