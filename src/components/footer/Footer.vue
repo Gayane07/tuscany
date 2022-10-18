@@ -5,7 +5,7 @@
                 <img src="@/assets/icons/logo.svg" :alt="$t('logo')" width="133" height="130" />
             </div>
             <div class="divider"></div>
-            <div class="flex-between-start">
+            <div class="flex-between-start wrap column__wrapper">
                 <div
                     class="flex-col-between-start column"
                     v-for="(column, index) in items"
@@ -63,6 +63,9 @@ footer {
     }
 
     .column {
+        &__wrapper {
+            gap: 30px;
+        }
         &-title {
             font-size: 20px;
             margin-bottom: 20px;
@@ -105,8 +108,17 @@ footer {
 }
 
 @media only screen and (max-width: 767px) {
+    .column {
+        &__wrapper {
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
 }
 
 @media only screen and (max-width: 575px) {
+    footer {
+        font-size: 16px;
+    }
 }
 </style>
