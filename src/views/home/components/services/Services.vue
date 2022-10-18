@@ -43,12 +43,12 @@ export default {
 <style lang="scss" scoped>
 .services {
     color: #333333;
-    gap: 0 33px;
+    gap: 0 30px;
     &__item {
         gap: 20px 0;
-        max-width: 330px;
+        max-width: 300px;
         img {
-            width: 330px;
+            width: 100%;
             height: 300px;
             object-fit: cover;
             border-radius: 24px;
@@ -67,5 +67,39 @@ export default {
             -webkit-box-orient: vertical;
         }
     }
+}
+
+@media only screen and (max-width: 1850px) {
+    .services {
+        flex-wrap: wrap;
+        gap: 32px;
+        &__item {
+            width: 100%;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1359px) {
+}
+
+@media only screen and (max-width: 1199px) {
+}
+
+@media only screen and (max-width: 991px) {
+}
+
+@media only screen and (max-width: 767px) {
+    .services {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 575px) {
 }
 </style>

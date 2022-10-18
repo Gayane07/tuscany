@@ -49,7 +49,7 @@ export default {
 
 <style lang="scss" scoped>
 .statistics {
-    gap: 0 20%;
+    gap: 0 10%;
     color: #333333;
     img {
         object-fit: cover;
