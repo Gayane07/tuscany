@@ -42,9 +42,9 @@
             <PopularPackages :packages="homePageData.packages" />
         </section>
 
-        <!-- <section class="container home__customers">
+        <section class="container home__customers">
             <CustomersSays :data="homePageData.customerSays" />
-        </section> -->
+        </section>
     </div>
 </template>
 
@@ -167,6 +167,9 @@ export default {
 @media only screen and (max-width: 991px) {
     .home {
         &__statistics {
+            margin-bottom: 60px;
+        }
+        &__customers {
             margin-bottom: 60px;
         }
     }

@@ -57,6 +57,11 @@ export default {
     },
     created() {
         this.options.perPage = 2
+        this.options.breakpoints = {
+            767: {
+                perPage: 1,
+            },
+        }
     },
 }
 </script>
@@ -131,5 +136,53 @@ export default {
             }
         }
     }
+}
+
+@media only screen and (max-width: 1359px) {
+    .carousel {
+        &__title {
+            h1 {
+                font-size: 28px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+}
+
+@media only screen and (max-width: 991px) {
+    .carousel {
+        &__slide {
+            &--card {
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .carousel {
+        &__slide {
+            ::v-deep {
+                .splide__arrows {
+                    top: -16px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    button {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 575px) {
 }
 </style>

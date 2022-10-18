@@ -86,4 +86,10 @@ export default {
         }
     }
 }
+
+@media only screen and (max-width: 991px) {
+    button {
+        font-size: 16px !important;
+    }
+}
 </style>
