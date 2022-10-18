@@ -126,4 +126,15 @@ export default {
         transform: translate(0, -50%);
     }
 }
+
+@media only screen and (max-width: 575px) {
+    .input-wrapper {
+        p {
+            font-size: 14px;
+        }
+        &__input {
+            font-size: 14px;
+        }
+    }
+}
 </style>

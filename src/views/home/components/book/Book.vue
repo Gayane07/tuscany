@@ -99,7 +99,7 @@
                 />
             </div>
         </div>
-        <img src="@/assets/images/bike.png" :alt="$t('bikeImage')" />
+        <img class="cover" src="@/assets/images/bike.png" :alt="$t('bikeImage')" />
     </div>
 </template>
 
@@ -300,6 +300,85 @@ export default {
             color: #000000;
             text-align: center;
             line-height: 26px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1850px) {
+    .offer {
+        img.cover {
+            width: 650px;
+            height: 490px;
+        }
+    }
+}
+@media only screen and (max-width: 1730px) {
+    .offer {
+        img.cover {
+            width: 550px;
+            height: 420px;
+        }
+    }
+}
+@media only screen and (max-width: 1480px) {
+    .offer {
+        img.cover {
+            width: 400px;
+            height: 300px;
+        }
+    }
+}
+@media only screen and (max-width: 1359px) {
+}
+
+@media only screen and (max-width: 1199px) {
+    .offer {
+        &__wrapper {
+            width: 60%;
+            h1 {
+                font-size: 28px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .offer {
+        flex-direction: column-reverse;
+        img.cover {
+            position: static;
+            margin-bottom: 24px;
+        }
+        &__wrapper {
+            width: 100%;
+        }
+        &__info {
+            width: 100%;
+            &--fields {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+}
+
+@media only screen and (max-width: 575px) {
+    .offer {
+        &__info {
+            &--fields {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 475px) {
+    .offer {
+        img.cover {
+            width: 300px;
+            height: 200px;
         }
     }
 }

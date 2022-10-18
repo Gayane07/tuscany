@@ -101,5 +101,15 @@ export default {
 }
 
 @media only screen and (max-width: 575px) {
+    .services {
+        &__item {
+            p {
+                font-size: 22px;
+            }
+            span {
+                font-size: 14px;
+            }
+        }
+    }
 }
 </style>
