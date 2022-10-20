@@ -10,7 +10,7 @@
             <h1>{{ $t('tourPackages') }}</h1>
             <div class="tour__cards--wrapper">
                 <div v-for="card in homePageData.popularDestinations" :key="card.id">
-                    <TourCard showReadMore :card="card" />
+                    <TourCard showReadMore :card="card" @onCardClick="onClickCard" />
                 </div>
             </div>
         </section>
@@ -19,7 +19,7 @@
             <h1>{{ $t('services') }}</h1>
             <div class="services tour__cards--wrapper">
                 <div v-for="card in homePageData.popularDestinations" :key="card.id">
-                    <TourCard showReadMore landscapeMode :card="card" />
+                    <TourCard showReadMore landscapeMode :card="card" @onCardClick="onClickCard" />
                 </div>
             </div>
         </section>
@@ -53,6 +53,12 @@ export default {
     components: { TourCard, Book, CustomersSays },
     methods: {
         ...mapActions('homePageModule', ['fetchHomePageData']),
+        onClickCard(data) {
+            this.$router.push({
+                name: 'tourPackage',
+                params: { id: data.id },
+            })
+        },
     },
     computed: {
         ...mapGetters('homePageModule', ['homePageData', 'homePageLoading', 'homePageError']),
