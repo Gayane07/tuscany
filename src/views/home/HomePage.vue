@@ -3,12 +3,12 @@
         <span class="spinner"></span>
     </div>
     <div class="overlay" v-else-if="homePageError">
-        <GenericError @reFetchData="fetchHomePageData" />
+        <GenericError showFetchButton @reFetchData="fetchHomePageData" />
     </div>
     <div class="home" v-else>
         <section class="flex-center-center home__intro">
             <img class="home__intro--bg" src="@/assets/images/home-page-bg.png" :alt="$t('homePageImage')" />
-            <SearchSection class="home__intro--search flex-center-center" />
+            <TopSection class="home__intro--search flex-center-center" />
         </section>
 
         <section class="container home__destination">
@@ -53,7 +53,7 @@ import { mapActions, mapGetters } from 'vuex'
 
 // Components
 import GenericError from '@/components/GenericError'
-import SearchSection from './components/search/SearchSection'
+import TopSection from './components/search/TopSection'
 import PopularDestinations from './components/popularDestionations/PopularDestinations'
 import Statistics from './components/statistics/Statistics'
 import SpecialOffer from './components/offers/SpecialOffer'
@@ -66,7 +66,7 @@ export default {
     name: 'HomePage',
     components: {
         GenericError,
-        SearchSection,
+        TopSection,
         PopularDestinations,
         Statistics,
         SpecialOffer,

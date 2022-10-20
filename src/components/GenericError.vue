@@ -10,7 +10,13 @@ import PrimaryButton from './PrimaryButton'
 
 export default {
     name: 'GenericError',
-    components: { PrimaryButton }
+    components: { PrimaryButton },
+    props: {
+        showFetchButton: {
+            type: Boolean,
+            default: false
+        }
+    }
 }
 </script>
 

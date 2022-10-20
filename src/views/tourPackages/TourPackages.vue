@@ -1,10 +1,16 @@
 <template>
-    <div>tour packages</div>
+    <div :style="{ paddingTop: headerHeight + 'px' }">tour packages</div>
 </template>
 
 <script>
 export default {
-    name: 'TourPackages'
+    name: 'TourPackages',
+    props: {
+        headerHeight: {
+            type: Number,
+            required: true,
+        },
+    },
 }
 </script>
 

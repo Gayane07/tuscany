@@ -2,6 +2,7 @@
     "homepage-data": {
         "popularDestinations": [
             {
+                "id": 1,
                 "imgUrl": "https://picsum.photos/id/237/200/300",
                 "title": "Lucca Bike Tour",
                 "amount": {
@@ -17,6 +18,7 @@
                 "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae voluptatum non, at quaerat fugiat iure natus! Magni doloremque dolores quas recusandae expedita dolorum officiis neque exercitationem eveniet aliquid a reprehenderit, debitis facilis molestias perspiciatis perferendis ad enim eligendi, sequi aut, ullam consectetur asperiores nisi. Voluptatem odit unde voluptatum officia quod."
             },
             {
+                "id": 2,
                 "imgUrl": "https://picsum.photos/id/238/200/300",
                 "title": "Wine tasting In Tuscany",
                 "amount": {
@@ -32,6 +34,7 @@
                 "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae voluptatum non, at quaerat fugiat iure natus! Magni doloremque dolores quas recusandae expedita dolorum officiis neque exercitationem eveniet aliquid a reprehenderit, debitis facilis molestias perspiciatis perferendis ad enim eligendi, sequi aut, ullam consectetur asperiores nisi. Voluptatem odit unde voluptatum officia quod."
             },
             {
+                "id": 3,
                 "imgUrl": "https://picsum.photos/id/239/200/300",
                 "title": "Cinque Terre Tour",
                 "amount": {
@@ -47,6 +50,7 @@
                 "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae voluptatum non, at quaerat fugiat iure natus! Magni doloremque dolores quas recusandae expedita dolorum officiis neque exercitationem eveniet aliquid a reprehenderit, debitis facilis molestias perspiciatis perferendis ad enim eligendi, sequi aut, ullam consectetur asperiores nisi. Voluptatem odit unde voluptatum officia quod."
             },
             {
+                "id": 4,
                 "imgUrl": "https://picsum.photos/id/240/200/300",
                 "title": "Lucca Bike Tour",
                 "amount": {
@@ -62,6 +66,7 @@
                 "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae voluptatum non, at quaerat fugiat iure natus! Magni doloremque dolores quas recusandae expedita dolorum officiis neque exercitationem eveniet aliquid a reprehenderit, debitis facilis molestias perspiciatis perferendis ad enim eligendi, sequi aut, ullam consectetur asperiores nisi. Voluptatem odit unde voluptatum officia quod."
             },
             {
+                "id": 5,
                 "imgUrl": "https://picsum.photos/id/241/200/300",
                 "title": "Lorem Ipsum",
                 "amount": {
@@ -77,6 +82,7 @@
                 "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae voluptatum non, at quaerat fugiat iure natus! Magni doloremque dolores quas recusandae expedita dolorum officiis neque exercitationem eveniet aliquid a reprehenderit, debitis facilis molestias perspiciatis perferendis ad enim eligendi, sequi aut, ullam consectetur asperiores nisi. Voluptatem odit unde voluptatum officia quod."
             },
             {
+                "id": 6,
                 "imgUrl": "https://picsum.photos/id/242/200/300",
                 "title": "Dolor sit amet",
                 "amount": {

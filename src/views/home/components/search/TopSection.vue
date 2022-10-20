@@ -1,13 +1,13 @@
 <template>
-    <div class="search flex-col-center-center">
-        <div class="search__title">
+    <div class="top flex-col-center-center">
+        <div class="top__title">
             <h1>{{ $t('enjoyInTheBestWay') }}</h1>
             <h2>{{ $t('enjoyOurServices') }}</h2>
         </div>
-        <div class="search__block">
-            <div class="search__block--tabs">
+        <div class="top__block">
+            <div class="top__block--tabs">
                 <div
-                    class="search__block--tabs__item flex-center-center"
+                    class="top__block--tabs__item flex-center-center"
                     :class="{ 'active-tab': tab.active }"
                     v-for="tab in tabs"
                     :key="tab.id"
@@ -17,7 +17,7 @@
                     <span>{{ tab.label }}</span>
                 </div>
             </div>
-            <div class="search__block--content flex-between-center">
+            <div class="top__block--content flex-between-center">
                 <PublicTab v-if="activeTab === 'public'" />
                 <PrivateTab v-if="activeTab === 'private'" />
             </div>
@@ -30,7 +30,7 @@ import PublicTab from './PublicTab'
 import PrivateTab from './PrivateTab'
 
 export default {
-    name: 'SearchSection',
+    name: 'HomeTopSection',
     components: { PublicTab, PrivateTab },
     data() {
         return {
@@ -67,7 +67,7 @@ export default {
     font-family: 'Podcast';
     src: url('../../../../assets/fonts/Podcast.ttf');
 }
-.search {
+.top {
     margin-top: 12px;
     &__title {
         color: #fff;
@@ -132,7 +132,7 @@ export default {
 }
 
 @media only screen and (max-width: 1359px) {
-    .search {
+    .top {
         &__block {
             width: 80%;
         }
@@ -140,7 +140,7 @@ export default {
 }
 
 @media only screen and (max-width: 1199px) {
-    .search {
+    .top {
         &__block {
             width: 85%;
             padding: 12px;
@@ -158,7 +158,7 @@ export default {
 }
 
 @media only screen and (max-width: 991px) {
-    .search {
+    .top {
         &__title {
             padding: 0 16px;
             h1 {
@@ -175,7 +175,7 @@ export default {
 }
 
 @media only screen and (max-width: 575px) {
-    .search {
+    .top {
         margin-top: -40px;
         &__title {
             h1 {
