@@ -1,6 +1,6 @@
 <template>
     <div class="tour__slide--card" @click.stop="$emit('onCardClick', { target: 'card', id: card.id })">
-        <div class="cover">
+        <div class="cover" :class="{ landscape: landscapeMode }">
             <img :src="card.imgUrl" :alt="$t('image')" />
         </div>
         <div class="flex-col-between-start tour__slide--card__info">
@@ -59,8 +59,12 @@ export default {
         },
         showReadMore: {
             type: Boolean,
-            default: false
-        }
+            default: false,
+        },
+        landscapeMode: {
+            type: Boolean,
+            default: false,
+        },
     },
 }
 </script>
@@ -87,6 +91,9 @@ export default {
                 max-height: 400px;
                 border-radius: 24px;
                 overflow: hidden;
+                &.landscape {
+                    max-height: 300px;
+                }
                 img {
                     width: 100%;
                     object-fit: cover;
@@ -149,6 +156,11 @@ export default {
 }
 
 @media only screen and (max-width: 1359px) {
+    .tour__slide--card {
+        .cover.landscape {
+            max-height: 250px;
+        }
+    }
 }
 
 @media only screen and (max-width: 1199px) {

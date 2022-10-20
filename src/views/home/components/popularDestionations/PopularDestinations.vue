@@ -39,8 +39,11 @@ export default {
     },
     methods: {
         onClickCard(data) {
-            console.log(data);
-        }
+            this.$router.push({
+                name: 'tourPackage',
+                params: { id: data.id },
+            })
+        },
     },
     created() {
         this.options.breakpoints = {
