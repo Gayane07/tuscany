@@ -13,6 +13,7 @@
         "day": "day",
         "icon": "Icon",
         "readMore": "Read More",
+        "back": "Back",
 
         "//Image alt attributes": "Image alt attributes translations ----------",
         "logo": "Logo",
@@ -35,6 +36,7 @@
         "userImg": "User Image",
         "quoteIcon": "Quote icon",
         "aboutUsImage": "Background image",
+        "coverImage": "Cover image",
 
         "//Footer": "Footer translations ----------",
         "services": "Services",
@@ -171,6 +173,12 @@
         "expertGuides": "Expert Guides For You",
         "guaranteedFun": "Guaranteed fun at the best price!",
 
-        "//Tour packages": "Tour Packages page translations ----------"
+        "//Tour packages": "Tour Packages page translations ----------",
+
+        "//Tour package": "Tour Package page translations ----------",
+        "packImg": "Image",
+        "selectDate": "Select a date",
+        "buyNow": "Buy Now",
+        "details": "Details"
     }
 }

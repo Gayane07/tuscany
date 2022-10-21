@@ -3,7 +3,7 @@ import axios from 'axios'
 // State
 const state = () => ({
     homePage: {
-        data: [],
+        data: {},
         loading: false,
         searchLoading: false,
         bookLoading: false,

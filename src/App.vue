@@ -29,7 +29,9 @@ export default {
     },
     watch: {
         $route() {
-            window.scrollTo({ top: 0, behavior: 'auto' }) // Scroll to top after route change.
+            setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'auto' }) // Scroll to top after route change.
+            }, 0);
         },
     },
 }
