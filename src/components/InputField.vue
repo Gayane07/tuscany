@@ -116,7 +116,8 @@ export default {
         color: rgb(255, 0, 0);
         margin-top: 4px;
         left: 0;
-        bottom: -16px;
+        font-weight: 500;
+        bottom: -20px;
     }
     &__eye {
         position: absolute;

@@ -65,7 +65,12 @@
                             </template>
                         </v-select>
                     </div>
-                    <PrimaryButton class="time__btn" :label="$t('buyNow')" />
+                    <PrimaryButton
+                        class="time__btn"
+                        :label="$t('buyNow')"
+                        :disabled="$v.payload.$invalid"
+                        @onClick="setDates"
+                    />
                 </div>
             </div>
         </div>
@@ -101,10 +106,12 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions, mapGetters, mapMutations } from 'vuex'
 import '@mathieustan/vue-datepicker/dist/vue-datepicker.min.css'
 import 'vue-select/dist/vue-select.css'
 import { times } from '@/utils/timeOptions.js'
+import { validationMixin } from 'vuelidate'
+import { required } from 'vuelidate/lib/validators'
 
 // Components
 import { VueDatePicker } from '@mathieustan/vue-datepicker'
@@ -115,6 +122,7 @@ import CustomersSays from '../../home/components/customers/CustomersSays.vue'
 
 export default {
     name: 'TourPackage',
+    mixins: [validationMixin],
     components: { VueDatePicker, vSelect, GenericError, PrimaryButton, CustomersSays },
     props: {
         headerHeight: {
@@ -122,20 +130,22 @@ export default {
             required: true,
         },
     },
+    validations: {
+        payload: {
+            date: { required },
+            time: { required },
+        },
+    },
     data() {
         return {
             timeOptions: times,
             curPackage: {},
             imagesToShow: [],
-            fromRoute: '',
             payload: {
                 date: null,
                 time: null,
             },
-            selectedLabels: {
-                date: null,
-                time: null,
-            },
+            selectedLabels: {},
 
             features: [
                 {
@@ -178,6 +188,7 @@ export default {
     },
     methods: {
         ...mapActions('homePageModule', ['fetchHomePageData']),
+        ...mapMutations('bookItemModule', ['setPayloadFields']),
         redirectBack() {
             window.history.back()
         },
@@ -196,8 +207,10 @@ export default {
         handleChangeField(field, data, label = null) {
             this.payload[field] = data
             if (label) this.selectedLabels[field] = label
+        },
 
-            // this.$v.payload[field].$touch()
+        setDates() {
+            // this.setPayloadFields(this.payload)
         },
     },
     computed: {

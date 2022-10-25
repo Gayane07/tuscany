@@ -178,7 +178,7 @@
         ],
         "packages": [
             {
-                "id": "bike-rickshaw",
+                "id": "1",
                 "imgUrl": "https://picsum.photos/id/255/200/300",
                 "title": "BIKE / RICKSHAW",
                 "amount": {
@@ -194,7 +194,7 @@
                 ]
             },
             {
-                "id": "bike-tours",
+                "id": "2",
                 "imgUrl": "https://picsum.photos/id/256/200/300",
                 "title": "BIKE TOURS",
                 "amount": {
@@ -210,7 +210,7 @@
                 ]
             },
             {
-                "id": "bus-trips",
+                "id": "3",
                 "imgUrl": "https://picsum.photos/id/257/200/300",
                 "title": "BUS TRIPS",
                 "amount": {
@@ -226,7 +226,7 @@
                 ]
             },
             {
-                "id": "transfer",
+                "id": "4",
                 "imgUrl": "https://picsum.photos/id/258/200/300",
                 "title": "TRANSFER",
                 "amount": {
