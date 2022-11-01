@@ -5,7 +5,6 @@ const state = () => ({
     homePage: {
         data: {},
         loading: false,
-        searchLoading: false,
         bookLoading: false,
         error: false,
     },
@@ -15,9 +14,8 @@ const state = () => ({
 const getters = {
     homePageData: state => state.homePage.data,
     homePageLoading: state => state.homePage.loading,
-    searchLoading: state => state.homePage.searchLoading,
     bookLoading: state => state.homePage.bookLoading,
-    homePageError: state => state.homePage.error,
+    homePageError: state => state.homePage.error
 }
 
 // Mutations
@@ -27,9 +25,6 @@ const mutations = {
     },
     setHomePageLoading(state, value) {
         state.homePage.loading = value
-    },
-    setSearchLoading(state, value) {
-        state.homePage.searchLoading = value
     },
     setBookBtnLoading(state, value) {
         state.homePage.bookLoading = value
@@ -57,21 +52,13 @@ const actions = {
             })
     },
 
-    handleSearch({ commit }, payload) {
-        commit('setSearchLoading', true)
-        // TODO
-        setTimeout(() => {
-            commit('setSearchLoading', false)
-        }, 1000)
-    },
-
-    handleBookItem({commit}, payload) {
+    handleBookItem({ commit }, payload) {
         commit('setBookBtnLoading', true)
         // TODO
         setTimeout(() => {
             commit('setBookBtnLoading', false)
-        }, 1000);
-    }
+        }, 1000)
+    },
 }
 
 export default {

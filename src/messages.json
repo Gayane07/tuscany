@@ -190,6 +190,8 @@
         "message": "Message",
 
         "//SearchResult": "Search result page translations ----------",
-        "searchResult": "Search Results"
+        "searchResult": "Search Results",
+        "cardImage": "Card image",
+        "viewTour": "View Tour"
     }
 }
