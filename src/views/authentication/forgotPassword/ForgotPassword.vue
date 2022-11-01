@@ -107,4 +107,12 @@ export default {
         }
     }
 }
+
+@media only screen and (max-height: 400px) {
+    .reset {
+        &__btn {
+            margin: 16px 0;
+        }
+    }
+}
 </style>
