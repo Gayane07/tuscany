@@ -90,9 +90,9 @@
             <div class="pack__back--details__features flex-col-between-start">
                 <div class="flex-start-start" v-for="(item, index) in features" :key="index">
                     <img :src="item.imgUrl" :alt="$t('icon')" />
-                    <span
-                        ><strong>{{ item.label }}:</strong></span
-                    >
+                    <span>
+                        <strong>{{ item.label }}:</strong>
+                    </span>
                     <span>&nbsp;{{ item.value }}</span>
                 </div>
             </div>

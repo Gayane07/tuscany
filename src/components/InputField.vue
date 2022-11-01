@@ -94,7 +94,7 @@ export default {
         text-overflow: ellipsis;
         overflow: hidden;
         font-size: 16px;
-        color: #333333;;
+        color: #333333;
         &:focus {
             border: 1px solid rgba(51, 51, 51, 0.6);
         }

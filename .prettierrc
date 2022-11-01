@@ -5,5 +5,7 @@
     "semi": false,
     "printWidth": 110,
     "endOfLine": "auto",
-    "arrowParens": "avoid"
+    "arrowParens": "avoid",
+    "htmlWhitespaceSensitivity": "ignore",
+    "embeddedLanguageFormatting": "off"
 }
