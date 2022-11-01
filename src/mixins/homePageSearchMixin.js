@@ -1,4 +1,4 @@
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions, mapGetters, mapMutations } from 'vuex'
 import { times } from '@/utils/timeOptions.js'
 
 export default {
@@ -21,7 +21,8 @@ export default {
     },
 
     methods: {
-        ...mapActions('homePageModule', ['handleSearch']),
+        ...mapActions('searchModule', ['handleSearch']),
+        ...mapMutations('searchModule', ['setRequestSuccess']),
         onChange(item, field) {
             this.payload[field] = item.value
             this.selectedLabels[field] = item.label
@@ -40,6 +41,19 @@ export default {
         },
     },
     computed: {
-        ...mapGetters('homePageModule', ['searchLoading']),
+        ...mapGetters('searchModule', ['searchLoading', 'requestSuccess']),
+    },
+    watch: {
+        requestSuccess(value) {
+            if (value) {
+                this.$router.push({
+                    name: 'searchResult',
+                    query: { ...this.payload }
+                })
+            }
+        },
+    },
+    beforeDestroy() {
+        this.setRequestSuccess(false)
     },
 }
