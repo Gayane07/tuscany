@@ -59,9 +59,9 @@
                                     :placeholder="$t('enterYourMessage')"
                                     @change="event => handleChangeField('message', event.target.value)"
                                 ></textarea>
-                                <span v-if="$v.payload.message.$error" class="contact__form--errmsg">{{
-                                    $t('fieldIsRequired')
-                                }}</span>
+                                <span v-if="$v.payload.message.$error" class="contact__form--errmsg">
+                                    {{ $t('fieldIsRequired') }}
+                                </span>
                             </div>
                         </div>
                         <PrimaryButton
@@ -132,8 +132,8 @@ export default {
         },
     },
     computed: {
-        ...mapGetters('sendMessageModule', ['buttonLoading'])
-    }
+        ...mapGetters('sendMessageModule', ['buttonLoading']),
+    },
 }
 </script>
 

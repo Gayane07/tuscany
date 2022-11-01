@@ -92,4 +92,23 @@ export default {
         }
     }
 }
+
+@media only screen and (max-width: 575px) {
+    .check-email {
+        &__resend {
+            flex-direction: column;
+            span {
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-height: 400px) {
+    .check-email {
+        &__btn {
+            margin: 16px 0;
+        }
+    }
+}
 </style>
