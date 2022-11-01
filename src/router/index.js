@@ -29,6 +29,11 @@ const routes = [
         name: 'contactUs',
         component: () => import('../views/contactUs/ContactUs.vue'),
     },
+    {
+        path: '/result',
+        name: 'SearchResult',
+        component: () => import('../views/searchResult/Result.vue'),
+    },
 ]
 
 const router = new VueRouter({

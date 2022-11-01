@@ -268,6 +268,68 @@
                 "customerName": "Lloyd Banks",
                 "message": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure"
             }
+        ],
+        "searchResult": [
+            {
+                "date": "Date: Tuesday, 02 Oct 2022",
+                "time": "15:00 PM",
+                "Number of group": "15-30",
+                "Transportation": "Bus",
+                "Duartion": "15 hours and 45 minutes",
+                "Guide service": "Included",
+                "Language": "English, Italian",
+                "Entry Fees": "lorem ipsum",
+                "price": "34 €",
+                "imgUrl": "https://picsum.photos/id/257/200/300"
+            },
+            {
+                "date": "Date: Tuesday, 02 Oct 2022",
+                "time": "15:00 PM",
+                "Number of group": "15-30",
+                "Transportation": "Bus",
+                "Duartion": "15 hours and 45 minutes",
+                "Guide service": "Included",
+                "Language": "English, Italian",
+                "Entry Fees": "lorem ipsum",
+                "price": "34 €",
+                "imgUrl": "https://picsum.photos/id/258/200/300"
+            },
+            {
+                "date": "Date: Tuesday, 02 Oct 2022",
+                "time": "15:00 PM",
+                "Number of group": "15-30",
+                "Transportation": "Bus",
+                "Duartion": "15 hours and 45 minutes",
+                "Guide service": "Included",
+                "Language": "English, Italian",
+                "Entry Fees": "lorem ipsum",
+                "price": "34 €",
+                "imgUrl": "https://picsum.photos/id/258/200/300"
+            },
+            {
+                "date": "Date: Tuesday, 02 Oct 2022",
+                "time": "15:00 PM",
+                "Number of group": "15-30",
+                "Transportation": "Bus",
+                "Duartion": "15 hours and 45 minutes",
+                "Guide service": "Included",
+                "Language": "English, Italian",
+                "Entry Fees": "lorem ipsum",
+                "price": "34 €",
+                "imgUrl": "https://picsum.photos/id/257/200/300"
+            },
+            {
+                "date": "Date: Tuesday, 02 Oct 2022",
+                "time": "15:00 PM",
+                "Number of group": "15-30",
+                "Transportation": "Bus",
+                "Duartion": "15 hours and 45 minutes",
+                "Guide service": "Included",
+                "Language": "English, Italian",
+                "Entry Fees": "lorem ipsum",
+                "price": "34 €",
+                "imgUrl": "https://picsum.photos/id/258/200/300"
+            }
         ]
     }
 }
