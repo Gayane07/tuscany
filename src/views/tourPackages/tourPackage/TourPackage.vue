@@ -188,7 +188,7 @@ export default {
     },
     methods: {
         ...mapActions('homePageModule', ['fetchHomePageData']),
-        ...mapMutations('bookItemModule', ['setPayloadFields']),
+        ...mapMutations('bookItemModule', ['setPayloadFields', 'setCurrentPackage']),
         redirectBack() {
             window.history.back()
         },
@@ -210,7 +210,13 @@ export default {
         },
 
         setDates() {
-            // this.setPayloadFields(this.payload)
+            this.setPayloadFields(this.payload)
+            this.setCurrentPackage(this.curPackage)
+
+            this.$router.push({
+                name: 'bookingDetails',
+                params: { id: this.$route.params.id },
+            })
         },
     },
     computed: {

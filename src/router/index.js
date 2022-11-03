@@ -25,6 +25,11 @@ const routes = [
         component: () => import('../views/tourPackages/tourPackage/TourPackage.vue'),
     },
     {
+        path: '/tour-packages/:id/book',
+        name: 'bookingDetails',
+        component: () => import('../views/tourPackages/buy/BuyPage.vue'),
+    },
+    {
         path: '/contact-us',
         name: 'contactUs',
         component: () => import('../views/contactUs/ContactUs.vue'),

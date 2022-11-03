@@ -14,6 +14,7 @@
         "icon": "Icon",
         "readMore": "Read More",
         "back": "Back",
+        "free": "FREE",
 
         "//Image alt attributes": "Image alt attributes translations ----------",
         "logo": "Logo",
@@ -38,6 +39,9 @@
         "aboutUsImage": "Background image",
         "coverImage": "Cover image",
         "mapImg": "Map image",
+        "minusIcon": "Minus icon",
+        "plusIcon": "Plus icon",
+        "calendarIcon": "Calendar icon",
 
         "//Footer": "Footer translations ----------",
         "services": "Services",
@@ -192,6 +196,21 @@
         "//SearchResult": "Search result page translations ----------",
         "searchResult": "Search Results",
         "cardImage": "Card image",
-        "viewTour": "View Tour"
+        "viewTour": "View Tour",
+
+        "//BuyPage": "Buy Page translations ----------",
+        "whenYouWillVisit": "When you will visit?",
+        "whichTime": "Which time?",
+        "selectYourTickets": "Select Your Tickets",
+        "freeForKids": "Free for kids under 6 and disabled visitors (74%+)",
+        "pregnantWomen": "Pregnant women, families with strollers, and visitors on crutches can buy priority tickets at the venue",
+        "adult18": "Adult (18+)",
+        "child6-17": "Child (6-17)",
+        "withValueId": "With valid ID",
+        "onlyInCombination": " Only in combination with: Adult (18+)",
+        "yourTicketsOverview": "Your Tickets Overview",
+        "infant0-5": "Infant (0-5)",
+        "totalPrice": "Total Price",
+        "goToTheNextStep": "Go to the Next Step"
     }
 }
