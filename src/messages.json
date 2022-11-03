@@ -211,6 +211,9 @@
         "yourTicketsOverview": "Your Tickets Overview",
         "infant0-5": "Infant (0-5)",
         "totalPrice": "Total Price",
-        "goToTheNextStep": "Go to the Next Step"
+        "goToTheNextStep": "Go to the Next Step",
+        "bookingDetails": "Booking Details",
+        "yourDetails": "Your Details",
+        "payment": "Payment"
     }
 }

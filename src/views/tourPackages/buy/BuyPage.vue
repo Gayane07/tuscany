@@ -6,7 +6,9 @@
         <GenericError @reFetchData="fetchData" />
     </div>
     <div class="container" :style="{ paddingTop: headerHeight + 'px' }" v-else>
-        <div class="stepper flex-center-center">stepper</div>
+        <div class="buy-stepper flex-center-center">
+            <Stepper :steps="stepsData" :currentStepNum="step" @changeStep="handleChangeStep" />
+        </div>
         <BookingDetails v-if="step === 1" @changeStep="handleChangeStep" />
         <YourDetails v-if="step === 2" @changeStep="handleChangeStep" />
         <Payment v-if="step === 3" />
@@ -18,13 +20,14 @@ import { mapActions, mapGetters } from 'vuex'
 
 // Components
 import GenericError from '@/components/GenericError'
+import Stepper from '@/components/Stepper'
 import BookingDetails from './tabs/BookingDetails'
 import YourDetails from './tabs/YourDetails'
 import Payment from './tabs/Payment'
 
 export default {
     name: 'BuyPage',
-    components: { GenericError, BookingDetails, YourDetails, Payment },
+    components: { GenericError, Stepper, BookingDetails, YourDetails, Payment },
     props: {
         headerHeight: {
             type: Number,
@@ -33,14 +36,28 @@ export default {
     },
     data() {
         return {
-            step: 1
+            step: 1,
+            stepsData: [
+                {
+                    id: 1,
+                    label: this.$t('bookingDetails'),
+                },
+                {
+                    id: 2,
+                    label: this.$t('yourDetails'),
+                },
+                {
+                    id: 3,
+                    label: this.$t('payment'),
+                },
+            ],
         }
     },
     methods: {
         ...mapActions('bookItemModule', ['fetchData']),
         handleChangeStep(step) {
             this.step = step
-        }
+        },
     },
     computed: {
         ...mapGetters('bookItemModule', ['currentItem', 'loading', 'error']),
@@ -49,12 +66,30 @@ export default {
         if (!this.currentItem) {
             this.fetchData()
         }
-    }
+    },
 }
 </script>
 
 <style lang="scss" scoped>
-.stepper {
-    margin-bottom: 120px;
+.buy-stepper {
+    width: 50%;
+    margin: 0 auto 120px;
+}
+
+@media only screen and (max-width: 1359px) {
+    .buy-stepper {
+        margin: 0 auto 80px;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .buy-stepper {
+        margin: 0 auto 50px;
+    }
+}
+@media only screen and (max-width: 575px) {
+    .buy-stepper {
+        width: 80%;
+        margin: 0 auto 32px;
+    }
 }
 </style>
