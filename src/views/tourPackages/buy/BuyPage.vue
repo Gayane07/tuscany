@@ -88,7 +88,7 @@ export default {
 }
 @media only screen and (max-width: 575px) {
     .buy-stepper {
-        width: 80%;
+        width: 75%;
         margin: 0 auto 32px;
     }
 }

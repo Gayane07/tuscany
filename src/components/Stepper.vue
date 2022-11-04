@@ -150,6 +150,7 @@ export default {
             &--content {
                 margin-top: -15px;
                 &__item {
+                    max-width: 50px;
                     p {
                         font-size: 12px;
                         padding: 4px 10px;
