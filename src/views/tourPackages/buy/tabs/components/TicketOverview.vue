@@ -63,11 +63,10 @@
             <span class="total-value">{{ prices.adult.currencySymbol + computeTotalValue }}</span>
         </div>
 
-        <!-- Allow to continue only if adult was selected -->
         <PrimaryButton
             class="full-width next-btn"
             :label="$t('goToTheNextStep')"
-            :disabled="!payloadData.adult"
+            :disabled="disableNextButton"
             @onClick="$emit('changeStep')"
         />
     </div>
@@ -82,6 +81,12 @@ import PrimaryButton from '@/components/PrimaryButton'
 export default {
     name: 'TicketOverview',
     components: { PrimaryButton },
+    props: {
+        disableNextButton: {
+            type: Boolean,
+            default: true
+        }
+    },
     computed: {
         ...mapGetters('bookItemModule', ['currentItem', 'payloadData', 'prices']),
         computeTotalValue() {

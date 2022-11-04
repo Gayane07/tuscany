@@ -214,6 +214,10 @@
         "goToTheNextStep": "Go to the Next Step",
         "bookingDetails": "Booking Details",
         "yourDetails": "Your Details",
-        "payment": "Payment"
+        "payment": "Payment",
+        "whoShallWeSend": "Who shall we send these tickets to?",
+        "name": "Name",
+        "surname": "Surname",
+        "enterYourSurname": "Enter your surname"
     }
 }

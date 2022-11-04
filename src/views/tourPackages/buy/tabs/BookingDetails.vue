@@ -128,7 +128,7 @@
         </div>
 
         <div class="buy__overview">
-            <TicketOverview @changeStep="changeStep" />
+            <TicketOverview @changeStep="changeStep" :disableNextButton="!payloadData.adult" />
         </div>
     </div>
 </template>
@@ -170,8 +170,16 @@ export default {
             this.payload[field] = value
             this.setPayloadFields(this.payload)
         },
+        calculateTotalPrice() {
+            return (
+                +this.payloadData.adult * +this.prices.adult.value +
+                +this.payloadData.child * +this.prices.child.value +
+                +this.payloadData.infant * +this.prices.infant.value
+            )
+        },
 
         changeStep() {
+            this.payload.totalPrice = this.calculateTotalPrice()
             this.setPayloadFields(this.payload)
             this.$emit('changeStep', 2)
         },
