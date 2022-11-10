@@ -224,6 +224,9 @@
         "discoverLogo": "Discover card logo",
         "maestroLogo": "Maestro card logo",
         "mastercardLogo": "Mastercard card logo",
-        "whatsIsThis": "What is this?"
+        "whatsIsThis": "What is this?",
+        "yourOrderIsComplete": "Your Order is complete!",
+        "youWillBeReceiving": "You will be receiving a confirmation email with order details.",
+        "goToHomePage": "Go to the Home Page"
     }
 }

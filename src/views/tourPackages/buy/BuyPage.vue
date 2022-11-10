@@ -38,7 +38,7 @@ export default {
     },
     data() {
         return {
-            step: 3,
+            step: 1,
             stepsData: [
                 {
                     id: 1,
