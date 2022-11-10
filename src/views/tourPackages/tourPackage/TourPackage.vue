@@ -98,7 +98,17 @@
             </div>
         </div>
 
-        <!-- Here should be the gallery -->
+        <div class="pack__back--gallery">
+            <div class="pack__back--gallery__title">
+                <h1>{{ $t('gallery') }}</h1>
+            </div>
+            <Splide :options="options" class="pack__back--gallery__slide splide">
+                <SplideSlide v-for="(img, index) in curPackage.images" :key="index">
+                    <img :src="img.src" :alt="$t('image')" />
+                </SplideSlide>
+            </Splide>
+        </div>
+
         <div class="pack__back--customers">
             <CustomersSays :data="homePageData.customerSays" />
         </div>
@@ -112,6 +122,8 @@ import 'vue-select/dist/vue-select.css'
 import { times } from '@/utils/timeOptions.js'
 import { validationMixin } from 'vuelidate'
 import { required } from 'vuelidate/lib/validators'
+import { sliderOptions } from '@/utils/destinationsSliderOptions'
+import '@splidejs/splide/dist/css/themes/splide-default.min.css'
 
 // Components
 import { VueDatePicker } from '@mathieustan/vue-datepicker'
@@ -119,11 +131,20 @@ import vSelect from 'vue-select'
 import GenericError from '@/components/GenericError.vue'
 import PrimaryButton from '@/components/PrimaryButton'
 import CustomersSays from '../../home/components/customers/CustomersSays.vue'
+import { Splide, SplideSlide } from '@splidejs/vue-splide'
 
 export default {
     name: 'TourPackage',
     mixins: [validationMixin],
-    components: { VueDatePicker, vSelect, GenericError, PrimaryButton, CustomersSays },
+    components: {
+        VueDatePicker,
+        vSelect,
+        GenericError,
+        PrimaryButton,
+        CustomersSays,
+        Splide,
+        SplideSlide,
+    },
     props: {
         headerHeight: {
             type: Number,
@@ -184,6 +205,7 @@ export default {
                     value: 'Bus',
                 },
             ],
+            options: { ...sliderOptions },
         }
     },
     methods: {
@@ -225,6 +247,22 @@ export default {
     created() {
         if (!Object.keys(this.homePageData).length) {
             this.fetchHomePageData()
+        }
+        this.options.breakpoints = {
+            1359: {
+                perPage: 4,
+            },
+            1199: {},
+            991: {
+                perPage: 3,
+            },
+            767: {
+                perPage: 2,
+            },
+            575: {},
+            420: {
+                perPage: 1,
+            },
         }
     },
     watch: {
@@ -372,6 +410,51 @@ export default {
             }
         }
 
+        &--gallery {
+            color: #333333;
+            margin-bottom: 48px;
+            &__title {
+                h1 {
+                    font-weight: 800;
+                    font-size: 32px;
+                    margin-bottom: 60px;
+                }
+            }
+            &__slide {
+                ::v-deep {
+                    ul {
+                        height: 400px;
+                        li {
+                            border-radius: 12px;
+                        }
+                    }
+                    .splide__arrows {
+                        position: relative;
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        gap: 0 20px;
+                        top: -56px;
+                        height: 0;
+                        button {
+                            position: static;
+                            background-color: #efefef;
+                            width: 50px;
+                            height: 50px;
+                            transition: all 0.2s;
+                            &:hover {
+                                transition: all 0.2s;
+                                background-color: #fa8b02;
+                                svg {
+                                    fill: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         &--details {
             width: 100%;
             max-width: 50%;
@@ -424,6 +507,21 @@ export default {
     }
 }
 
+@media only screen and (max-width: 1600px) {
+    .pack {
+        &__back {
+            &--gallery {
+                &__slide {
+                    ::v-deep {
+                        ul {
+                            height: 300px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 @media only screen and (max-width: 1359px) {
     .pack {
         &__back {
