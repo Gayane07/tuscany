@@ -68,6 +68,14 @@ const mutations = {
     setPageError(state, value) {
         state.page.error = value
     },
+
+    resetState(state) {
+        for(const key in state.item.payloadData) {
+            state.item.payloadData[key] = null
+        }
+        state.item.payloadData.date = new Date().toISOString().split('T')[0]
+        state.currentItem = null
+    }
 }
 
 // Helper function

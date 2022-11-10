@@ -6,12 +6,13 @@
         <GenericError @reFetchData="fetchData" />
     </div>
     <div class="container" :style="{ paddingTop: headerHeight + 'px' }" v-else>
-        <div class="buy-stepper flex-center-center">
+        <div class="buy-stepper flex-center-center" v-if="step !== 4">
             <Stepper :steps="stepsData" :currentStepNum="step" @changeStep="handleChangeStep" />
         </div>
         <BookingDetails v-if="step === 1" @changeStep="handleChangeStep" />
         <YourDetails v-if="step === 2" @changeStep="handleChangeStep" />
-        <Payment v-if="step === 3" />
+        <Payment v-if="step === 3" @finishPayment="handleFinishPayment" />
+        <OrderComplete v-if="step === 4" />
     </div>
 </template>
 
@@ -24,10 +25,11 @@ import Stepper from '@/components/Stepper'
 import BookingDetails from './tabs/BookingDetails'
 import YourDetails from './tabs/YourDetails'
 import Payment from './tabs/Payment'
+import OrderComplete from './tabs/OrderComplete'
 
 export default {
     name: 'BuyPage',
-    components: { GenericError, Stepper, BookingDetails, YourDetails, Payment },
+    components: { GenericError, Stepper, BookingDetails, YourDetails, Payment, OrderComplete },
     props: {
         headerHeight: {
             type: Number,
@@ -36,7 +38,7 @@ export default {
     },
     data() {
         return {
-            step: 1,
+            step: 3,
             stepsData: [
                 {
                     id: 1,
@@ -56,6 +58,9 @@ export default {
     methods: {
         ...mapActions('bookItemModule', ['fetchData']),
         handleChangeStep(step) {
+            this.step = step
+        },
+        handleFinishPayment(step) {
             this.step = step
         },
     },

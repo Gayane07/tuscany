@@ -218,6 +218,12 @@
         "whoShallWeSend": "Who shall we send these tickets to?",
         "name": "Name",
         "surname": "Surname",
-        "enterYourSurname": "Enter your surname"
+        "enterYourSurname": "Enter your surname",
+        "payWithCreditCard": "Pay with Credit Card",
+        "visaLogo": "Visa card logo",
+        "discoverLogo": "Discover card logo",
+        "maestroLogo": "Maestro card logo",
+        "mastercardLogo": "Mastercard card logo",
+        "whatsIsThis": "What is this?"
     }
 }
