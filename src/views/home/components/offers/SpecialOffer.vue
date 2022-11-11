@@ -63,6 +63,18 @@ export default {
     }
 }
 
+@media only screen and (max-width: 1599px) {
+    .offer {
+        &__info {
+            h1 {
+                font-size: 28px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+}
 @media only screen and (max-width: 1359px) {
 }
 
@@ -75,10 +87,10 @@ export default {
         &__info {
             max-width: 500px;
             h1 {
-                font-size: 28px;
+                font-size: 24px;
             }
             p {
-                font-size: 16px;
+                font-size: 14px;
             }
         }
     }
@@ -93,12 +105,6 @@ export default {
         }
         &__info {
             max-width: 100%;
-            h1 {
-                font-size: 28px;
-            }
-            p {
-                font-size: 16px;
-            }
         }
     }
 }

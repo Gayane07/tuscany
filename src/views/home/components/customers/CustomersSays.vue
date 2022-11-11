@@ -138,17 +138,61 @@ export default {
     }
 }
 
-@media only screen and (max-width: 1359px) {
+@media only screen and (max-width: 1559px) {
     .carousel {
         &__title {
             h1 {
                 font-size: 28px;
             }
         }
+        &__slide {
+            ::v-deep {
+                .splide__arrows {
+                    button {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+
+            &--card {
+                p {
+                    font-size: 16px;
+                }
+                &__user {
+                    span {
+                        font-size: 16px;
+                    }
+                }
+                padding: 0 24px;
+            }
+        }
     }
+}
+@media only screen and (max-width: 1359px) {
 }
 
 @media only screen and (max-width: 1199px) {
+    .carousel {
+        &__title {
+            h1 {
+                font-size: 24px;
+            }
+        }
+        &__slide {
+            &--card {
+                p {
+                    font-size: 14px;
+                }
+                &__user {
+                    span {
+                        font-size: 14px;
+                    }
+                }
+                padding: 0 18px;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 991px) {

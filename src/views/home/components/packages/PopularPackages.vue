@@ -127,8 +127,11 @@ export default {
     }
 }
 
-@media only screen and (max-width: 1359px) {
+@media only screen and (max-width: 1599px) {
     .package {
+        h1 {
+            font-size: 28px;
+        }
         &__info {
             h2 {
                 font-size: 18px;
@@ -152,14 +155,46 @@ export default {
             &--item {
                 font-size: 14px;
             }
+            &--book {
+                font-size: 18px;
+            }
         }
     }
+}
+@media only screen and (max-width: 1359px) {
 }
 
 @media only screen and (max-width: 1199px) {
     .package {
         h1 {
-            font-size: 28px;
+            font-size: 24px;
+        }
+        &__info {
+            h2 {
+                font-size: 18px;
+            }
+            &--amount {
+                h2 {
+                    font-size: 18px;
+                }
+                span {
+                    font-size: 12px;
+                    margin-top: -2px;
+                }
+                &::after {
+                    content: attr(data-after);
+                    position: absolute;
+                    right: -38px;
+                    bottom: 16px;
+                    font-size: 12px;
+                }
+            }
+            &--item {
+                font-size: 12px;
+            }
+            &--book {
+                font-size: 16px;
+            }
         }
     }
 }
@@ -187,8 +222,16 @@ export default {
         gap: 32px;
     }
     .package {
+        h1 {
+            margin-bottom: 16px;
+        }
         &__item {
             width: 100%;
+        }
+        &--info {
+            &--book {
+                font-size: 14px;
+            }
         }
     }
 }

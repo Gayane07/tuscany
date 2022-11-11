@@ -38,6 +38,7 @@
                 <div class="flex-end-center full-width">
                     <v-select
                         class="item__select"
+                        appendToBody
                         :class="{ 'with-value': selectedLabels.time }"
                         :options="timeOptions"
                         :value="selectedLabels.time"
@@ -59,6 +60,7 @@
                     <v-select
                         class="item__select"
                         :class="{ 'with-value': selectedLabels.tour }"
+                        appendToBody
                         :options="tourOptions"
                         :value="selectedLabels.tour"
                         :placeholder="$t('selectTour')"
@@ -79,6 +81,7 @@
                     <v-select
                         class="item__select"
                         :class="{ 'with-value': selectedLabels.types }"
+                        appendToBody
                         :options="typesOptions"
                         :value="selectedLabels.types"
                         :placeholder="$t('selectTypes')"
@@ -256,39 +259,46 @@ export default {
 }
 
 @media only screen and (max-width: 1599px) {
-}
-
-@media only screen and (max-width: 1359px) {
-}
-
-@media only screen and (max-width: 1199px) {
     .item {
-        padding: 10px;
         &__title {
             span {
                 font-size: 16px;
             }
         }
+    }
+}
+
+@media only screen and (max-width: 1359px) {
+    .item {
+        padding: 10px;
+        &__title {
+            span {
+                font-size: 14px;
+            }
+        }
         &__select {
             ::v-deep {
                 input {
-                    font-size: 16px;
+                    font-size: 14px;
                 }
             }
         }
         &__date {
             ::v-deep {
                 input {
-                    font-size: 16px !important;
+                    font-size: 14px !important;
                 }
                 .vd-picker__controls {
                     &-wrapper {
-                        font-size: 16px;
+                        font-size: 14px;
                     }
                 }
             }
         }
     }
+}
+
+@media only screen and (max-width: 1199px) {
 }
 
 @media only screen and (max-width: 991px) {

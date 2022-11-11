@@ -150,13 +150,21 @@ export default {
     }
 }
 
-@media only screen and (max-width: 1359px) {
+@media only screen and (max-width: 1559px) {
     .home {
         &__destination {
             margin-top: 50px;
+            margin-bottom: 80px;
         }
         &__statistics {
             margin-bottom: 200px;
+        }
+        &__packages {
+            margin-top: 80px;
+            margin-bottom: 60px;
+        }
+        &__customers {
+            margin-bottom: 60px;
         }
     }
 }
@@ -169,6 +177,10 @@ export default {
         &__statistics {
             margin-bottom: 60px;
         }
+        &__services {
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
         &__customers {
             margin-bottom: 60px;
         }
@@ -179,5 +191,33 @@ export default {
 }
 
 @media only screen and (max-width: 575px) {
+    .home {
+        &__destination {
+            margin-top: 32px;
+        }
+
+        &__statistics {
+            margin-bottom: 32px;
+        }
+
+        &__offer,
+        &__book {
+            padding: 16px 0;
+        }
+
+        &__services {
+            margin-top: 32px;
+            margin-bottom: 32px;
+        }
+
+        &__packages {
+            margin-top: 32px;
+            margin-bottom: 24px;
+        }
+
+        &__customers {
+            margin-bottom: 24px;
+        }
+    }
 }
 </style>

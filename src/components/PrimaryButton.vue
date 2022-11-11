@@ -90,6 +90,10 @@ export default {
 @media only screen and (max-width: 991px) {
     button {
         font-size: 16px !important;
+        img {
+            width: 22px;
+            height: 22px;
+        }
     }
 }
 </style>

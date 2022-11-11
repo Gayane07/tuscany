@@ -79,6 +79,14 @@ footer {
         }
         &-items {
             gap: 10px 24px;
+            img {
+                transition: 0.2s;
+            }
+            img:hover {
+                filter: invert(0) hue-rotate(-35deg);
+                transition: 0.2s;
+                margin-top: -5px;
+            }
         }
     }
 
@@ -89,6 +97,13 @@ footer {
 
 @media only screen and (max-width: 1599px) {
     footer {
+        font-size: 16px;
+        .column {
+            &-title {
+                font-size: 18px;
+                margin-bottom: 18px;
+            }
+        }
         .logo {
             img {
                 width: 120px;
@@ -118,7 +133,7 @@ footer {
 
 @media only screen and (max-width: 575px) {
     footer {
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 </style>

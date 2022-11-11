@@ -292,39 +292,46 @@ export default {
 }
 
 @media only screen and (max-width: 1599px) {
-}
-
-@media only screen and (max-width: 1359px) {
-}
-
-@media only screen and (max-width: 1199px) {
     .item {
-        padding: 10px;
         &__title {
             span {
                 font-size: 16px;
             }
         }
+    }
+}
+
+@media only screen and (max-width: 1359px) {
+    .item {
+        padding: 10px;
+        &__title {
+            span {
+                font-size: 14px;
+            }
+        }
         &__select {
             ::v-deep {
                 input {
-                    font-size: 16px;
+                    font-size: 14px;
                 }
             }
         }
         &__date {
             ::v-deep {
                 input {
-                    font-size: 16px !important;
+                    font-size: 14px !important;
                 }
                 .vd-picker__controls {
                     &-wrapper {
-                        font-size: 16px;
+                        font-size: 14px;
                     }
                 }
             }
         }
     }
+}
+
+@media only screen and (max-width: 1199px) {
 }
 
 @media only screen and (max-width: 991px) {

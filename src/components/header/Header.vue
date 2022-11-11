@@ -2,14 +2,15 @@
     <header class="header">
         <div class="container">
             <div class="flex-between-center">
-                <img
-                    class="cursor-pointer header__logo"
-                    src="@/assets/icons/logo.svg"
-                    :alt="$t('logo')"
-                    width="133"
-                    height="130"
-                    @click="$router.push('/')"
-                />
+                <router-link :to="{ name: 'home' }" class="logo-link">
+                    <img
+                        class="cursor-pointer header__logo"
+                        src="@/assets/icons/logo.svg"
+                        :alt="$t('logo')"
+                        width="133"
+                        height="130"
+                    />
+                </router-link>
                 <input class="menu-btn" type="checkbox" id="menu-btn" />
                 <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
                 <ul class="menu flex-between-center">
@@ -80,6 +81,7 @@ export default {
     },
     watch: {
         $route(to) {
+            // if (this.$route.fullPath === to.fullPath) return
             if (!to.path.includes('tour-packages')) {
                 this.resetActiveNestedTab()
             }
@@ -131,6 +133,9 @@ export default {
     font-weight: 600;
     padding: 20px 0 0 0;
     background: rgba(255, 255, 255, 0.8);
+    .logo-link {
+        border-bottom: none !important;
+    }
     ul {
         margin: 0;
         padding: 0;
@@ -256,6 +261,7 @@ export default {
 
 @media only screen and (max-width: 1599px) {
     .header {
+        font-size: 16px;
         &__logo {
             width: 100px;
             height: 97px;
@@ -265,7 +271,6 @@ export default {
 
 @media only screen and (max-width: 1359px) {
     .header {
-        font-size: 16px;
         ul {
             li {
                 a {
@@ -281,6 +286,7 @@ export default {
 
 @media only screen and (max-width: 991px) {
     .header {
+        font-size: 14px;
         &__logo {
             width: 80px;
             height: 78px;

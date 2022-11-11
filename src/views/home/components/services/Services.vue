@@ -82,10 +82,32 @@ export default {
     }
 }
 
+@media only screen and (max-width: 1599px) {
+    .services {
+        &__item {
+            p {
+                font-size: 22px;
+            }
+            span {
+                font-size: 16px;
+            }
+        }
+    }
+}
 @media only screen and (max-width: 1359px) {
 }
 
 @media only screen and (max-width: 1199px) {
+    .services {
+        &__item {
+            p {
+                font-size: 18px;
+            }
+            span {
+                font-size: 14px;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 991px) {
@@ -101,15 +123,5 @@ export default {
 }
 
 @media only screen and (max-width: 575px) {
-    .services {
-        &__item {
-            p {
-                font-size: 22px;
-            }
-            span {
-                font-size: 14px;
-            }
-        }
-    }
 }
 </style>

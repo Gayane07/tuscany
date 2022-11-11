@@ -119,6 +119,13 @@ export default {
 }
 
 @media only screen and (max-width: 991px) {
+    .carousel {
+        &__title {
+            h1 {
+                font-size: 24px;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 767px) {
@@ -142,6 +149,13 @@ export default {
 }
 
 @media only screen and (max-width: 575px) {
+    .carousel {
+        &__title {
+            h1 {
+                margin-bottom: 18px;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 420px) {

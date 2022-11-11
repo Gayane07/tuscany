@@ -178,11 +178,11 @@ export default {
         },
         onBookNow() {
             this.handleBookItem(this.payload)
-        }
+        },
     },
     computed: {
-        ...mapGetters('homePageModule', ['bookLoading'])
-    }
+        ...mapGetters('homePageModule', ['bookLoading']),
+    },
 }
 </script>
 
@@ -320,6 +320,37 @@ export default {
         }
     }
 }
+@media only screen and (max-width: 1599px) {
+    .offer {
+        &__wrapper {
+            h1 {
+                font-size: 28px;
+            }
+        }
+        &__btn {
+            font-size: 16px;
+        }
+        &__info {
+            &--fields {
+                &__item {
+                    p.label {
+                        font-size: 16px;
+                    }
+                    &--date {
+                        font-size: 14px;
+                    }
+                    &--select {
+                        ::v-deep {
+                            .vs__dropdown-toggle {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 @media only screen and (max-width: 1480px) {
     .offer {
         img.cover {
@@ -336,7 +367,7 @@ export default {
         &__wrapper {
             width: 60%;
             h1 {
-                font-size: 28px;
+                font-size: 24px;
             }
         }
     }
@@ -362,10 +393,39 @@ export default {
 }
 
 @media only screen and (max-width: 767px) {
+    .offer {
+        &__btn {
+            font-size: 14px;
+        }
+        &__info {
+            &--fields {
+                &__item {
+                    p.label {
+                        font-size: 14px;
+                    }
+                    &--date {
+                        font-size: 12px;
+                    }
+                    &--select {
+                        ::v-deep {
+                            .vs__dropdown-toggle {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 575px) {
     .offer {
+        &__wrapper {
+            h1 {
+                font-size: 22px;
+            }
+        }
         &__info {
             &--fields {
                 display: flex;

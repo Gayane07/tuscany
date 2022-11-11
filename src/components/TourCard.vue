@@ -1,14 +1,15 @@
 <template>
     <div class="tour__slide--card" @click.stop="$emit('onCardClick', { target: 'card', id: card.id })">
         <div class="cover" :class="{ landscape: landscapeMode }">
-            <img :src="card.imgUrl" :alt="$t('image')" />
+            <img :src="card.imgUrl" :alt="$t('image')" @error="imageError" />
         </div>
         <div class="flex-col-between-start tour__slide--card__info">
             <h2>{{ card.title }}</h2>
             <div class="flex-start-center">
                 <bdi>{{ $t('from') }}</bdi>
                 <span class="tour__slide--card__info--amount">
-                    {{ card.amount.amount }} <strong>{{ card.amount.currencySymbol }}</strong>
+                    {{ card.amount.amount }}
+                    <strong>{{ card.amount.currencySymbol }}</strong>
                 </span>
             </div>
             <div class="flex-between-center full-width tour__slide--card__info--days">
@@ -66,6 +67,11 @@ export default {
             default: false,
         },
     },
+    methods: {
+        imageError(e) {
+            e.target.src = 'https://apply.sts.net.pk/assets/images/default-upload-image.jpg'
+        },
+    },
 }
 </script>
 
@@ -92,10 +98,11 @@ export default {
                 border-radius: 24px;
                 overflow: hidden;
                 &.landscape {
-                    max-height: 300px;
+                    height: 300px;
                 }
                 img {
                     width: 100%;
+                    height: 100%;
                     object-fit: cover;
                     transition: 0.4s;
                 }
@@ -155,10 +162,41 @@ export default {
     }
 }
 
+@media only screen and (max-width: 1599px) {
+    .tour {
+        &__slide {
+            &--card {
+                &__info {
+                    h2 {
+                        font-size: 22px;
+                    }
+                    bdi {
+                        font-size: 16px;
+                    }
+                    &--amount {
+                        font-size: 22px;
+                    }
+                    &--days {
+                        font-size: 16px;
+                    }
+                    div.description {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 1359px) {
     .tour__slide--card {
         .cover.landscape {
-            max-height: 250px;
+            height: 250px;
+        }
+        &__info {
+            &--days {
+                font-size: 14px;
+            }
         }
     }
 }
@@ -175,13 +213,13 @@ export default {
                 }
                 &__info {
                     h2 {
-                        font-size: 22px;
+                        font-size: 20px;
                     }
                     bdi {
-                        font-size: 16px;
+                        font-size: 14px;
                     }
                     &--amount {
-                        font-size: 22px !important;
+                        font-size: 20px !important;
                     }
                     span,
                     div.description {

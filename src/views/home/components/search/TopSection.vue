@@ -131,10 +131,24 @@ export default {
     }
 }
 
+@media only screen and (max-width: 1599px) {
+    .top {
+        &__block {
+            width: 80%;
+            &--tabs {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 1359px) {
     .top {
         &__block {
             width: 80%;
+            &--tabs {
+                font-size: 14px;
+            }
         }
     }
 }
@@ -147,7 +161,6 @@ export default {
             &--tabs {
                 &__item {
                     padding: 10px;
-                    font-size: 16px;
                 }
             }
             &--content {

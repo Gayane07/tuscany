@@ -128,7 +128,18 @@ export default {
     }
 }
 
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 1599px) {
+    .input-wrapper {
+        p {
+            font-size: 16px;
+        }
+        &__input {
+            font-size: 16px;
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
     .input-wrapper {
         p {
             font-size: 14px;

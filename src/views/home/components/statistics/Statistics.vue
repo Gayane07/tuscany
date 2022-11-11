@@ -87,14 +87,28 @@ export default {
     }
 }
 
-@media only screen and (max-width: 1359px) {
+@media only screen and (max-width: 1599px) {
     .statistics {
-        gap: 0 80px;
-        img {
-            width: 340px;
-            height: 550px;
+        &__info {
+            h1 {
+                font-size: 28px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+        &__nums {
+            h3 {
+                font-size: 28px;
+            }
+            p {
+                font-size: 14px;
+            }
         }
     }
+}
+
+@media only screen and (max-width: 1359px) {
 }
 
 @media only screen and (max-width: 1199px) {
@@ -106,7 +120,18 @@ export default {
         &__info {
             width: 60%;
             h1 {
-                font-size: 28px;
+                font-size: 24px;
+            }
+        }
+        &__nums {
+            &--wrapper {
+                align-items: flex-start;
+            }
+            h3 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 12px;
             }
         }
     }
@@ -120,9 +145,6 @@ export default {
         }
         &__info {
             width: 70%;
-            h1 {
-                font-size: 28px;
-            }
             span,
             p {
                 font-size: 14px;
@@ -136,10 +158,6 @@ export default {
 
             &--wrapper {
                 gap: 0 20px;
-            }
-
-            h3 {
-                font-size: 28px;
             }
         }
     }
