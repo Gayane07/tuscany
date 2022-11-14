@@ -12,8 +12,8 @@ const state = () => ({
 
     // New password
     newPassword: {
-        changed: false
-    }
+        changed: false,
+    },
 })
 
 // Getters
@@ -25,7 +25,7 @@ const getters = {
     messageSent: state => state.resetPassword.messageSent,
 
     // New password
-    passwordChanged: state => state.newPassword.changed
+    passwordChanged: state => state.newPassword.changed,
 }
 
 // Mutations
@@ -58,7 +58,17 @@ const actions = {
         commit('setButtonLoading', true)
         // TODO
         setTimeout(() => {
+            localStorage.setItem('token', '5fd4v5sd1vsdv1sdvfd5bhgthd1shj1sf5o4t5p41mngda5gfsdgv1h45fd1bs5dg')
+            window.location.reload()
             commit('setButtonLoading', false)
+        }, 1000)
+    },
+    handleLogout({ commit }) {
+        // commit('setButtonLoading', true)
+        setTimeout(() => {
+            localStorage.removeItem('token')
+            window.location.href = '/'
+            // commit('setButtonLoading', false)
         }, 1000)
     },
 
@@ -80,7 +90,7 @@ const actions = {
         }, 1000)
     },
 
-    handleSetNewPassword({commit}, payload) {
+    handleSetNewPassword({ commit }, payload) {
         commit('setButtonLoading', true)
         // TODO
         setTimeout(() => {

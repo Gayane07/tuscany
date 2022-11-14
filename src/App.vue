@@ -1,6 +1,6 @@
 <template>
     <div class="app">
-        <Header />
+        <Header :offsetWidth="offsetWidth" />
         <router-view class="app-page" :headerHeight="headerHeight"></router-view>
         <Footer />
     </div>
@@ -16,16 +16,18 @@ export default {
     data() {
         return {
             headerHeight: 155,
+            offsetWidth: 1920
         }
     },
     methods: {
-        getHeaderHeight() {
+        getHeaderDimensions() {
             this.headerHeight = document.querySelector('header').clientHeight
+            this.offsetWidth = document.body.offsetWidth
         },
     },
     mounted() {
-        this.getHeaderHeight()
-        window.addEventListener('resize', this.getHeaderHeight) // Get the height when the user switches to landscape mode for example.
+        this.getHeaderDimensions()
+        window.addEventListener('resize', this.getHeaderDimensions)
     },
     watch: {
         $route() {

@@ -19,7 +19,6 @@
                             {{ link.name }}
                         </router-link>
                     </li>
-
                     <li class="auth">
                         <v-select
                             class="nav-links__buttons--select"
@@ -32,14 +31,38 @@
                             @input="onChange"
                         ></v-select>
                     </li>
-                    <li class="auth">
-                        <button class="login" @click="authModalType = 'login'">
-                            {{ $t('login') }}
-                        </button>
-                    </li>
-                    <li class="auth">
-                        <PrimaryButton :label="$t('signUp')" @onClick="authModalType = 'register'" />
-                    </li>
+
+                    <template v-if="!token">
+                        <li class="auth">
+                            <button class="login" @click="authModalType = 'login'">
+                                {{ $t('login') }}
+                            </button>
+                        </li>
+                        <li class="auth">
+                            <PrimaryButton :label="$t('signUp')" @onClick="authModalType = 'register'" />
+                        </li>
+                    </template>
+                    <template v-else>
+                        <div class="header__user">
+                            <img
+                                src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png"
+                                :alt="$t('userImage')"
+                                @click="isDropdownOpen = !isDropdownOpen"
+                            />
+                        </div>
+                        <div class="header__dropdown flex-col-start-start" v-if="isDropdownOpen">
+                            <ul>
+                                <li class="flex-start-center" @click="redirectToMyTickets">
+                                    <img src="@/assets/icons/tickets.svg" :alt="$t('icon')" />
+                                    <span>{{ $t('myTickets') }}</span>
+                                </li>
+                                <li class="flex-start-center" @click="onLogout">
+                                    <img src="@/assets/icons/logout.svg" :alt="$t('icon')" />
+                                    <span>{{ $t('logout') }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </template>
                 </ul>
             </div>
         </div>
@@ -48,6 +71,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import 'vue-select/dist/vue-select.css'
 
 // Components
@@ -58,8 +82,16 @@ import Auth from '@/views/authentication/Auth'
 export default {
     name: 'HeaderComponent',
     components: { vSelect, PrimaryButton, Auth },
+    props: {
+        offsetWidth: {
+            type: Number,
+            default: 1920,
+        },
+    },
     data() {
         return {
+            token: localStorage.getItem('token'),
+            isDropdownOpen: false,
             localLanguage: 'Eng',
             authModalType: '',
             pages: [
@@ -72,11 +104,23 @@ export default {
         }
     },
     methods: {
+        ...mapActions('authModule', ['handleLogout']),
         onChange(item) {
             this.localLanguage = item.label
         },
         resetActiveNestedTab() {
             this.pages.forEach(item => (item.active = false))
+        },
+        redirectToMyTickets() {
+        this.$router.push({ name: 'myTickets' })
+            if (this.offsetWidth > 991) {
+                this.isDropdownOpen = false
+            } else {
+                document.getElementById('menu-btn').checked = false
+            }
+        },
+        onLogout() {
+            this.handleLogout()
         },
     },
     watch: {
@@ -89,6 +133,9 @@ export default {
             if (tabname === 'tour-packages') {
                 this.pages.find(item => item.path === tabname).active = true
             }
+        },
+        offsetWidth(width) {
+            this.isDropdownOpen = width < 991
         },
     },
 }
@@ -245,6 +292,48 @@ export default {
             }
         }
     }
+
+    &__user {
+        position: relative;
+        img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-left: 24px;
+            cursor: pointer;
+        }
+    }
+    &__dropdown {
+        width: 210px;
+        position: absolute;
+        right: 15%;
+        bottom: -111px;
+        z-index: 101;
+        background-color: #fff;
+        box-shadow: 0px 6px 10px rgba(87, 87, 87, 0.15);
+        border-radius: 12px;
+        ul {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+            li {
+                padding: 14px 24px;
+                width: 100%;
+                border-bottom: 1px solid silver;
+                cursor: pointer;
+                gap: 0 10px;
+                color: #333333;
+                font-weight: 400;
+                font-size: 18px;
+                &:last-child {
+                    border: none;
+                }
+            }
+        }
+    }
 }
 @media (min-width: 991px) {
     .header {
@@ -266,6 +355,13 @@ export default {
             width: 100px;
             height: 97px;
         }
+        &__dropdown {
+            ul {
+                li {
+                    font-size: 16px;
+                }
+            }
+        }
     }
 }
 
@@ -281,6 +377,17 @@ export default {
                 }
             }
         }
+        &__dropdown {
+            right: 11%;
+        }
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .header {
+        &__dropdown {
+            right: 8%;
+        }
     }
 }
 
@@ -290,6 +397,40 @@ export default {
         &__logo {
             width: 80px;
             height: 78px;
+        }
+        .menu-btn {
+            &:checked {
+                ~ {
+                    .menu {
+                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                        .header__user {
+                            img {
+                                margin: 0;
+                            }
+                        }
+                        .header__dropdown {
+                            display: block;
+                            width: 100%;
+                            margin-right: -23px;
+                            box-shadow: none;
+                            border-radius: 0;
+                            ul {
+                                li {
+                                    margin: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &__dropdown {
+            display: none;
+            ul {
+                li {
+                    font-size: 14px;
+                }
+            }
         }
     }
 }

@@ -39,6 +39,11 @@ const routes = [
         name: 'searchResult',
         component: () => import('../views/searchResult/Result.vue'),
     },
+    {
+        path: '/my-tickets',
+        name: 'myTickets',
+        component: () => import ('../views/myTickets/MyTickets.vue')
+    }
 ]
 
 const router = new VueRouter({

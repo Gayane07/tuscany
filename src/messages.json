@@ -42,6 +42,7 @@
         "minusIcon": "Minus icon",
         "plusIcon": "Plus icon",
         "calendarIcon": "Calendar icon",
+        "userImage": "User image",
 
         "//Footer": "Footer translations ----------",
         "services": "Services",
@@ -68,6 +69,8 @@
         "contactUs": "Contact Us",
         "login": "Login",
         "signUp": "Sign Up",
+        "myTickets": "My Tickets",
+        "logout": "Logout",
 
         "//Login": "Login translations ----------",
         "emailAddress": "Email Address",
