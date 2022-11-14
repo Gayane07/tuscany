@@ -1,7 +1,7 @@
 <template>
     <div class="carousel">
         <div class="carousel__title">
-            <h1>{{ $t('exploreOurDestinations') }}</h1>
+            <h1>{{ title }}</h1>
         </div>
         <Splide :options="options" class="carousel__slide splide">
             <SplideSlide v-for="(card, index) in data" :key="index">
@@ -31,6 +31,10 @@ export default {
             type: Array,
             default: () => [],
         },
+        title: {
+            type: String,
+            required: true
+        }
     },
     data() {
         return {

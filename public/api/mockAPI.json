@@ -321,5 +321,37 @@
                 "value": 30
             }
         }
+    ],
+    "tickets": [
+        {
+            "imgUrl": "https://picsum.photos/id/270/160/110",
+            "title": "Wine tasting In Tuscany",
+            "date": "FRI, 23 DEC 2022",
+            "time": "15:00",
+            "payment": {
+                "method": "Paypal",
+                "icon": "paypal"
+            },
+            "price": {
+                "amount": "86.00",
+                "currencySymbol": "€"
+            },
+            "status": "upcoming"
+        },
+        {
+            "imgUrl": "https://picsum.photos/id/271/160/110",
+            "title": "Wine tasting In Tuscany",
+            "date": "SUN, 25 DEC 2022",
+            "time": "10:00",
+            "payment": {
+                "method": "Credit Card",
+                "icon": "visa"
+            },
+            "price": {
+                "amount": "86.00",
+                "currencySymbol": "€"
+            },
+            "status": "ended"
+        }
     ]
 }

@@ -43,6 +43,7 @@
         "plusIcon": "Plus icon",
         "calendarIcon": "Calendar icon",
         "userImage": "User image",
+        "touristsImage": "Tourists",
 
         "//Footer": "Footer translations ----------",
         "services": "Services",
@@ -231,6 +232,13 @@
         "whatsIsThis": "What is this?",
         "yourOrderIsComplete": "Your Order is complete!",
         "youWillBeReceiving": "You will be receiving a confirmation email with order details.",
-        "goToHomePage": "Go to the Home Page"
+        "goToHomePage": "Go to the Home Page",
+
+        "//MyTickets": "My Tickets page translations ----------",
+        "youDontHaveTickets": "You don't have any tickets yet. Start planning your next trip!",
+        "tourName": "Tour Name",
+        "paymentMethod": "Payment Method",
+        "price": "Price",
+        "status": "Status"
     }
 }

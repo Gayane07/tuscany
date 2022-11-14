@@ -1,7 +1,7 @@
 <template>
     <div class="app">
         <Header :offsetWidth="offsetWidth" />
-        <router-view class="app-page" :headerHeight="headerHeight"></router-view>
+        <router-view class="app-page" :headerHeight="headerHeight" :offsetWidth="offsetWidth"></router-view>
         <Footer />
     </div>
 </template>
@@ -16,7 +16,7 @@ export default {
     data() {
         return {
             headerHeight: 155,
-            offsetWidth: 1920
+            offsetWidth: 1920,
         }
     },
     methods: {
@@ -33,7 +33,7 @@ export default {
         $route() {
             setTimeout(() => {
                 window.scrollTo({ top: 0, behavior: 'auto' }) // Scroll to top after route change.
-            }, 0);
+            }, 0)
         },
     },
 }

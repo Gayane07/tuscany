@@ -7,6 +7,7 @@ import homePageModule from './modules/homePage.module'
 import searchModule from './modules/search.module'
 import bookItemModule from './modules/bookItem.module'
 import sendMessageModule from './modules/sendMessage.module'
+import myTicketsModule from './modules/myTickets.module'
 
 Vue.use(Vuex)
 
@@ -20,5 +21,6 @@ export default new Vuex.Store({
         searchModule,
         bookItemModule,
         sendMessageModule,
+        myTicketsModule,
     },
 })

@@ -12,7 +12,7 @@
         </section>
 
         <section class="container home__destination">
-            <PopularDestinations :data="homePageData.popularDestinations" />
+            <PopularDestinations :data="homePageData.popularDestinations" :title="$t('exploreOurDestinations')" />
         </section>
 
         <section class="container home__statistics">
