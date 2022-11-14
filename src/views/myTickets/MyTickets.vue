@@ -18,9 +18,10 @@
             </div>
 
             <PopularDestinations
-                v-if="Object.keys(homePageData).length"
+                class="tickets__wrapper--slide"
                 :data="homePageData.popularDestinations"
                 :title="$t('tourPackages')"
+                v-if="Object.keys(homePageData).length"
             />
         </div>
     </div>
@@ -116,6 +117,9 @@ export default {
                 box-shadow: rgba(0, 0, 0, 0.05) -20px 0px 10px -12px inset,
                     rgba(0, 0, 0, 0.05) -20px 0px 10px -18px inset;
             }
+        }
+        &--slide {
+            margin-bottom: 32px;
         }
     }
 }
