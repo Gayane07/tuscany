@@ -1,7 +1,6 @@
 <template>
     <gmap-map class="map" :zoom="11" :center="center" style="width: 100%" :options="options" ref="googleMap">
         <gmap-marker
-            style="width: 15px; height: 15px"
             :key="index"
             v-for="(m, index) in locationMarkers"
             :position="m.position"
