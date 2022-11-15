@@ -75,9 +75,8 @@
                 </div>
             </div>
         </div>
-        <div class="full-width relative contact__map">
-            <img class="contact__map--item" src="@/assets/images/map-bg.png" :alt="$t('mapImg')" />
-            <img class="contact__map--logo" src="@/assets/icons/logo-as-map.png" :alt="$t('logo')" />
+        <div class="full-width">
+            <GoogleMap />
         </div>
     </div>
 </template>
@@ -90,11 +89,12 @@ import { required, minLength, email } from 'vuelidate/lib/validators'
 // Components
 import InputField from '@/components/InputField'
 import PrimaryButton from '@/components/PrimaryButton'
+import GoogleMap from '@/components/GoogleMap'
 
 export default {
     name: 'ContactUs',
     mixins: [validationMixin],
-    components: { InputField, PrimaryButton },
+    components: { InputField, PrimaryButton, GoogleMap },
     props: {
         headerHeight: {
             type: Number,
@@ -240,21 +240,6 @@ export default {
         min-width: 190px;
         height: 45px;
     }
-
-    &__map {
-        pointer-events: none;
-        user-select: none;
-        &--item {
-            width: 100%;
-            height: 100%;
-        }
-        &--logo {
-            position: absolute;
-            top: 45%;
-            left: 45%;
-            width: 5%;
-        }
-    }
 }
 
 ::v-deep {
@@ -317,13 +302,6 @@ export default {
 }
 
 @media only screen and (max-width: 575px) {
-    .contact {
-        &__map {
-            &--logo {
-                width: 10%;
-            }
-        }
-    }
 }
 @media only screen and (max-width: 475px) {
 }
