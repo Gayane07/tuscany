@@ -133,7 +133,7 @@ export default {
     },
     data() {
         return {
-            locale: localStorage?.getItem('locale') || 'en',
+            locale: localStorage.getItem('locale'),
             payload: {
                 name: null,
                 email: null,

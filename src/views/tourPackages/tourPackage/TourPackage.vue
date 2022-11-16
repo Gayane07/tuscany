@@ -43,7 +43,7 @@
                         no-header
                         :visible="true"
                         color="#fa8b02"
-                        :locale="{ lang: 'en' }"
+                        :locale="{ lang: locale }"
                         :placeholder="$t('selectDate')"
                         @onOpen="setDatepickerMenuStyles()"
                     />
@@ -159,6 +159,7 @@ export default {
     },
     data() {
         return {
+            locale: localStorage.getItem('locale'),
             timeOptions: times,
             curPackage: {},
             imagesToShow: [],

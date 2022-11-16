@@ -24,8 +24,14 @@ Vue.use(VueGoogleMaps, {
     },
 })
 
+// Set default language
+if (!localStorage.getItem('locale')) {
+    localStorage.setItem('locale', process.env.VUE_APP_LOCALE || 'en')
+}
+
+const locale = localStorage.getItem('locale') || process.env.VUE_APP_LOCALE || 'en'
 const i18n = new VueI18n({
-    locale: 'en',
+    locale,
     messages,
 })
 

@@ -10,7 +10,7 @@
                         no-header
                         fullscreen-mobile
                         color="#fa8b02"
-                        :locale="{ lang: 'en' }"
+                        :locale="{ lang: locale }"
                         :placeholder="$t('chooseDate')"
                         @onOpen="
                             isDatepickerOpened = true
@@ -149,6 +149,7 @@ export default {
     components: { VueDatePicker, vSelect, TicketOverview },
     data() {
         return {
+            locale: localStorage.getItem('locale'),
             payload: {},
             timeOptions: times,
             isDatepickerOpened: false,

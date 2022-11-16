@@ -5,7 +5,7 @@ export default {
     data() {
         return {
             isDatepickerOpened: false,
-            locale: this.localStorage?.getItem('locale') || 'en',
+            locale: localStorage.getItem('locale'),
             timeOptions: times,
             tourOptions: [
                 { value: 'luccaBikeTour', label: this.$t('luccaBikeTour') },

@@ -24,7 +24,7 @@
                             class="nav-links__buttons--select"
                             appendToBody
                             :options="languages"
-                            :value="localLanguage"
+                            :value="languages.find(el => el.value === locale).label"
                             :clearable="false"
                             :filterable="false"
                             :searchable="false"
@@ -92,7 +92,7 @@ export default {
         return {
             token: localStorage.getItem('token'),
             isDropdownOpen: false,
-            localLanguage: 'Eng',
+            locale: localStorage.getItem('locale'),
             authModalType: '',
             pages: [
                 { name: this.$t('home'), url: 'home', path: 'home', active: false },
@@ -100,19 +100,20 @@ export default {
                 { name: this.$t('tourPackages'), url: 'tourPackages', path: 'tour-packages', active: false },
                 { name: this.$t('contactUs'), url: 'contactUs', path: 'contact-us', active: false },
             ],
-            languages: [{ title: 'Eng', label: 'Eng' }],
+            languages: [{ value: 'en', label: 'Eng' }],
         }
     },
     methods: {
         ...mapActions('authModule', ['handleLogout']),
         onChange(item) {
-            this.localLanguage = item.label
+            localStorage.setItem('locale', item.value)
+            window.location.reload()
         },
         resetActiveNestedTab() {
             this.pages.forEach(item => (item.active = false))
         },
         redirectToMyTickets() {
-        this.$router.push({ name: 'myTickets' })
+            this.$router.push({ name: 'myTickets' })
             if (this.offsetWidth > 991) {
                 this.isDropdownOpen = false
             } else {
@@ -125,7 +126,7 @@ export default {
         toggleDropdown() {
             if (this.offsetWidth < 991) return
             this.isDropdownOpen = !this.isDropdownOpen
-        }
+        },
     },
     watch: {
         $route(to) {
