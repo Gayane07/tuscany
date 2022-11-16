@@ -383,7 +383,7 @@ export default {
                             right: 24px;
                             transform: translate(0, -50%);
                         }
-                        ::v-deep {
+                        ::v-deep() {
                             .vs__dropdown-toggle {
                                 outline: none;
                                 width: 100%;
@@ -422,7 +422,7 @@ export default {
                 }
             }
             &__slide {
-                ::v-deep {
+                ::v-deep() {
                     ul {
                         height: 400px;
                         li {
@@ -484,7 +484,7 @@ export default {
         }
     }
 }
-::v-deep {
+::v-deep() {
     .vd-wrapper.item__date-picker {
         input {
             font-weight: 600;
@@ -500,7 +500,7 @@ export default {
     }
 
     .with-value {
-        ::v-deep {
+        ::v-deep() {
             input {
                 display: none;
             }
@@ -513,7 +513,7 @@ export default {
         &__back {
             &--gallery {
                 &__slide {
-                    ::v-deep {
+                    ::v-deep() {
                         ul {
                             height: 300px;
                         }

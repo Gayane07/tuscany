@@ -183,7 +183,7 @@ export default {
 
     &__select {
         width: 80%;
-        ::v-deep {
+        ::v-deep() {
             .vs__dropdown-toggle {
                 border: none;
                 background: transparent;
@@ -218,7 +218,7 @@ export default {
             }
         }
         &.with-value {
-            ::v-deep {
+            ::v-deep() {
                 input {
                     display: none;
                 }
@@ -236,7 +236,7 @@ export default {
                 transition: 0.2s;
             }
         }
-        ::v-deep {
+        ::v-deep() {
             input {
                 font-size: 18px !important;
                 &::placeholder {
@@ -277,14 +277,17 @@ export default {
             }
         }
         &__select {
-            ::v-deep {
+            ::v-deep() {
                 input {
+                    font-size: 14px;
+                }
+                .vs__selected {
                     font-size: 14px;
                 }
             }
         }
         &__date {
-            ::v-deep {
+            ::v-deep() {
                 input {
                     font-size: 14px !important;
                 }
@@ -314,7 +317,7 @@ export default {
     .search-btn {
         width: 100%;
         margin-top: 16px;
-        ::v-deep {
+        ::v-deep() {
             button {
                 box-shadow: none;
                 width: 100% !important;

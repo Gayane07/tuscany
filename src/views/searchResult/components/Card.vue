@@ -96,7 +96,7 @@ export default {
                     font-size: 32px;
                 }
             }
-            ::v-deep {
+            ::v-deep() {
                 button {
                     white-space: nowrap;
                 }

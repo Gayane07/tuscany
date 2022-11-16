@@ -118,7 +118,7 @@ export default {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 55px;
-            ::v-deep {
+            ::v-deep() {
                 p.input-wrapper__label {
                     opacity: 1;
                 }
@@ -136,7 +136,7 @@ export default {
         &__info {
             &--fields {
                 gap: 32px;
-                ::v-deep {
+                ::v-deep() {
                     input {
                         font-size: 14px;
                         padding: 8px 16px;

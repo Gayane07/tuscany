@@ -170,7 +170,7 @@ export default {
                 &.services {
                     grid-template-columns: repeat(1, 1fr);
                 }
-                ::v-deep {
+                ::v-deep() {
                     .cover {
                         img {
                             width: 100%;

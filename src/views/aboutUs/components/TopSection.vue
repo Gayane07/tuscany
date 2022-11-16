@@ -54,7 +54,7 @@ export default {
         }
         &--btn {
             margin-top: 24px;
-            ::v-deep {
+            ::v-deep() {
                 &.secondary-button {
                     background-color: transparent;
                     color: #fff;

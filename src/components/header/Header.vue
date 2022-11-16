@@ -157,7 +157,7 @@ export default {
 
 .nav-links__buttons--select {
     width: 70px;
-    ::v-deep {
+    ::v-deep() {
         .vs__dropdown-toggle {
             cursor: pointer;
             border: none;

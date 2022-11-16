@@ -221,7 +221,7 @@ export default {
             grid-template-columns: repeat(2, 1fr);
             gap: 30px;
             .with-value {
-                ::v-deep {
+                ::v-deep() {
                     input {
                         display: none;
                     }
@@ -255,7 +255,7 @@ export default {
                     border-radius: 8px;
                     font-size: 16px;
                     color: #333333;
-                    ::v-deep {
+                    ::v-deep() {
                         input::placeholder {
                             color: #333333;
                         }
@@ -268,7 +268,7 @@ export default {
                         right: 24px;
                         transform: translate(0, -50%);
                     }
-                    ::v-deep {
+                    ::v-deep() {
                         .vs__dropdown-toggle {
                             outline: none;
                             width: 100%;
@@ -340,7 +340,7 @@ export default {
                         font-size: 14px;
                     }
                     &--select {
-                        ::v-deep {
+                        ::v-deep() {
                             .vs__dropdown-toggle {
                                 font-size: 14px;
                             }
@@ -407,7 +407,7 @@ export default {
                         font-size: 12px;
                     }
                     &--select {
-                        ::v-deep {
+                        ::v-deep() {
                             .vs__dropdown-toggle {
                                 font-size: 12px;
                             }

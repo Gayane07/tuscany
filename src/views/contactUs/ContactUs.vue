@@ -242,7 +242,7 @@ export default {
     }
 }
 
-::v-deep {
+::v-deep() {
     p.input-wrapper__label {
         opacity: 1;
     }

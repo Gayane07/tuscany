@@ -81,7 +81,7 @@ export default {
         }
     }
     &__slide {
-        ::v-deep {
+        ::v-deep() {
             .splide__arrows {
                 position: relative;
                 display: flex;
@@ -135,7 +135,7 @@ export default {
 @media only screen and (max-width: 767px) {
     .carousel {
         &__slide {
-            ::v-deep {
+            ::v-deep() {
                 .splide__arrows {
                     top: -16px;
                     width: 100%;
@@ -165,7 +165,7 @@ export default {
 @media only screen and (max-width: 420px) {
     .carousel {
         &__slide {
-            ::v-deep {
+            ::v-deep() {
                 .splide__arrows {
                     top: 150px;
                     button.splide__arrow {

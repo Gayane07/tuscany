@@ -211,7 +211,7 @@ export default {
             img {
                 transition: 0.2s;
             }
-            ::v-deep {
+            ::v-deep() {
                 input {
                     font-size: 18px !important;
                     &::placeholder {
@@ -253,7 +253,7 @@ export default {
                 margin-bottom: 20px;
             }
             .with-value {
-                ::v-deep {
+                ::v-deep() {
                     input {
                         display: none;
                     }
@@ -349,7 +349,7 @@ export default {
         width: 50%;
     }
 }
-::v-deep {
+::v-deep() {
     .vd-wrapper.buy__details--date-picker {
         input {
             font-weight: 600;
@@ -388,7 +388,7 @@ export default {
                     font-size: 18px;
                     margin-bottom: 12px;
                 }
-                ::v-deep {
+                ::v-deep() {
                     input {
                         font-size: 14px !important;
                     }
@@ -409,7 +409,7 @@ export default {
                     margin-bottom: 12px;
                 }
                 .with-value {
-                    ::v-deep {
+                    ::v-deep() {
                         span.vs__selected {
                             font-size: 14px;
                         }
@@ -475,7 +475,7 @@ export default {
             }
         }
     }
-    ::v-deep {
+    ::v-deep() {
         .v-select.vs--open {
             .vs__selected {
                 margin-top: 15px;

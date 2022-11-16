@@ -112,7 +112,7 @@ export default {
     .about {
         &__statistics {
             gap: 0 40px;
-            ::v-deep {
+            ::v-deep() {
                 img {
                     width: 400px;
                     border-radius: 24px;
@@ -127,7 +127,7 @@ export default {
         &__statistics {
             margin-top: 80px;
             margin-bottom: 80px;
-            ::v-deep {
+            ::v-deep() {
                 img {
                     width: 300px;
                 }
@@ -149,7 +149,7 @@ export default {
 @media only screen and (max-width: 767px) {
     .about {
         &__statistics {
-            ::v-deep {
+            ::v-deep() {
                 img {
                     width: 100%;
                 }
