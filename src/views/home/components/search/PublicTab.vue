@@ -229,6 +229,14 @@ export default {
             .vs__selected {
                 font-weight: 500;
                 font-size: 18px;
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 100%;
+                &-options {
+                    width: 80%;
+                }
             }
             .vs__dropdown-menu {
                 width: max-content;
@@ -253,7 +261,10 @@ export default {
         &.with-value {
             ::v-deep() {
                 input {
-                    display: none;
+                    width: 0;
+                    height: 0;
+                    margin: 0;
+                    padding: 0;
                 }
             }
         }
@@ -296,6 +307,28 @@ export default {
         &__title {
             span {
                 font-size: 16px;
+            }
+        }
+        &__select {
+            ::v-deep() {
+                input {
+                    font-size: 16px;
+                }
+                .vs__selected {
+                    font-size: 16px;
+                }
+            }
+        }
+        &__date {
+            ::v-deep() {
+                input {
+                    font-size: 16px !important;
+                }
+                .vd-picker__controls {
+                    &-wrapper {
+                        font-size: 16px;
+                    }
+                }
             }
         }
     }

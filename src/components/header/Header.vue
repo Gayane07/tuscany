@@ -29,7 +29,7 @@
                             :clearable="false"
                             :filterable="false"
                             :searchable="false"
-                            v-click-outside="() => $refs.selectLang.open = false"
+                            v-click-outside="() => ($refs.selectLang.open = false)"
                             @input="onChange"
                         ></v-select>
                     </li>
@@ -155,28 +155,26 @@ export default {
     border-bottom: 3px solid #fa8b02;
 }
 
-.nav-links__buttons--select {
+::v-deep(.nav-links__buttons--select) {
     width: 70px;
-    ::v-deep() {
-        .vs__dropdown-toggle {
-            cursor: pointer;
-            border: none;
-            background: transparent;
-        }
+    .vs__dropdown-toggle {
+        cursor: pointer;
+        border: none;
+        background: transparent;
+    }
+    input {
+        display: none;
+    }
+    &.vs--open {
         input {
-            display: none;
+            display: block;
         }
-        &.vs--open {
-            input {
-                display: block;
-            }
-        }
-        span.vs__selected {
-            color: #33333380;
-        }
-        .vs__dropdown-menu {
-            margin-top: 10px;
-        }
+    }
+    span.vs__selected {
+        color: #33333380;
+    }
+    .vs__dropdown-menu {
+        margin-top: 10px;
     }
 }
 .header {
