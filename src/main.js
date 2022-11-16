@@ -6,6 +6,7 @@ import axios from 'axios'
 import VueI18n from 'vue-i18n'
 import messages from './messages'
 import Vuelidate from 'vuelidate'
+import vClickOutside from 'v-click-outside'
 import * as VueGoogleMaps from 'vue2-google-maps'
 
 axios.defaults.baseURL = process.env.VUE_APP_BASE_URL || 'http://localhost:3000/'
@@ -15,6 +16,7 @@ const MAP_KEY = process.env.VUE_APP_MAP_KEY
 Vue.use(axios)
 Vue.use(VueI18n)
 Vue.use(Vuelidate)
+Vue.use(vClickOutside)
 Vue.use(VueGoogleMaps, {
     load: {
         // KEY taken from https://developers.google.com/maps/documentation/javascript/custom-markers#maps_custom_markers-html

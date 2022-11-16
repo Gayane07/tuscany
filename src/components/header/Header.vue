@@ -21,6 +21,7 @@
                     </li>
                     <li class="auth">
                         <v-select
+                            ref="selectLang"
                             class="nav-links__buttons--select"
                             appendToBody
                             :options="languages"
@@ -28,6 +29,7 @@
                             :clearable="false"
                             :filterable="false"
                             :searchable="false"
+                            v-click-outside="() => $refs.selectLang.open = false"
                             @input="onChange"
                         ></v-select>
                     </li>
