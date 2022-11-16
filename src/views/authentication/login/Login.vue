@@ -52,11 +52,15 @@
                         @onClick="handleSignIn"
                     />
                     <span class="login__midText">{{ $t('or') }}</span>
-                    <!-- Temp Google button -->
-                    <button class="login__google full-width">
+                    <GoogleLogin
+                        class="login__google"
+                        :params="params"
+                        :onSuccess="onSuccess"
+                        :onFailure="onFailure"
+                    >
                         <img src="@/assets/icons/google-logo.svg" alt="Google logo" width="24" height="24" />
                         {{ $t('singInWithGoogle') }}
-                    </button>
+                    </GoogleLogin>
                 </div>
             </div>
             <div class="flex-center-center login__bottom">
@@ -77,11 +81,12 @@ import { mapActions, mapGetters } from 'vuex'
 import AppModal from '@/components/AppModal'
 import InputField from '@/components/InputField'
 import PrimaryButton from '@/components/PrimaryButton'
+import GoogleLogin from 'vue-google-login'
 
 export default {
     name: 'Login',
     mixins: [validationMixin, authenticationMixin],
-    components: { AppModal, InputField, PrimaryButton },
+    components: { AppModal, InputField, PrimaryButton, GoogleLogin },
     validations: {
         payload: {
             email: { required, email },
@@ -94,12 +99,26 @@ export default {
                 email: '',
                 password: '',
             },
+
+            params: {
+                client_id: 'CLIEND_ID',
+            },
         }
     },
     methods: {
         ...mapActions('authModule', ['handleLogIn']),
         handleSignIn() {
             this.handleLogIn(this.payload)
+        },
+
+        onSuccess(googleUser) {
+            console.log(googleUser)
+
+            // This only gets the user information: id, name, imageUrl and email
+            console.log(googleUser.getBasicProfile())
+        },
+        onFailure(fail) {
+            console.log(fail)
         },
     },
     computed: {
@@ -135,6 +154,7 @@ export default {
     }
     &__google {
         position: relative;
+        width: 100%;
         border: 1px solid silver;
         padding: 10px 24px;
         border-radius: 50px;
