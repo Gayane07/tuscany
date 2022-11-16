@@ -13,7 +13,7 @@ const state = () => ({
 const getters = {
     tickets: state => state.tickets.data,
     loading: state => state.tickets.loading,
-    error: state => state.tickets.error
+    error: state => state.tickets.error,
 }
 
 // Mutations
@@ -26,7 +26,7 @@ const mutations = {
     },
     setPageError(state, value) {
         state.tickets.error = value
-    }
+    },
 }
 
 // Actions
@@ -34,7 +34,7 @@ const actions = {
     fetchTickets({ commit }) {
         commit('setPageLoading', true)
         axios
-            .get('http://localhost:3000/tickets')
+            .get('/tickets')
             .then(response => {
                 commit('setPageData', response.data)
                 commit('setPageError', false)

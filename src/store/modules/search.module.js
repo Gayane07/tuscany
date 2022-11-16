@@ -5,7 +5,7 @@ const state = () => ({
     search: {
         data: null,
         loading: false,
-        error: false
+        error: false,
     },
     requestSuccess: false,
 })
@@ -40,7 +40,7 @@ const actions = {
         commit('setSearchLoading', true)
         commit('setRequestSuccess', false)
         axios
-            .get('http://localhost:3000/search')
+            .get('/search')
             .then(response => {
                 commit('setSearchData', response.data)
                 commit('setSearchError', false)

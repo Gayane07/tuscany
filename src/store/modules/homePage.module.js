@@ -15,7 +15,7 @@ const getters = {
     homePageData: state => state.homePage.data,
     homePageLoading: state => state.homePage.loading,
     bookLoading: state => state.homePage.bookLoading,
-    homePageError: state => state.homePage.error
+    homePageError: state => state.homePage.error,
 }
 
 // Mutations
@@ -39,7 +39,7 @@ const actions = {
     fetchHomePageData({ commit }) {
         commit('setHomePageLoading', true)
         axios
-            .get('http://localhost:3000/homepage-data')
+            .get('/homepage-data')
             .then(response => {
                 commit('setHomePageData', response.data)
                 commit('setHomePageError', false)

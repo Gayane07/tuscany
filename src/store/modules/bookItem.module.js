@@ -70,12 +70,12 @@ const mutations = {
     },
 
     resetState(state) {
-        for(const key in state.item.payloadData) {
+        for (const key in state.item.payloadData) {
             state.item.payloadData[key] = null
         }
         state.item.payloadData.date = new Date().toISOString().split('T')[0]
         state.currentItem = null
-    }
+    },
 }
 
 // Helper function
@@ -89,7 +89,7 @@ const actions = {
     fetchData({ commit }) {
         commit('setPageLoading', true)
         axios
-            .get('http://localhost:3000/homepage-data')
+            .get('/homepage-data')
             .then(response => {
                 commit('setCurrentPackage', findItem(response.data))
                 commit('setPageError', false)
