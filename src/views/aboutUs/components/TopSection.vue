@@ -52,19 +52,17 @@ export default {
             max-width: 41%;
             margin: 0 auto;
         }
-        &--btn {
+        ::v-deep(&--btn) {
             margin-top: 24px;
-            ::v-deep() {
-                &.secondary-button {
-                    background-color: transparent;
-                    color: #fff;
-                    border-color: #fff;
-                    font-weight: 600;
-                    font-size: 20px;
-                    padding: 14px 24px;
-                    &:hover {
-                        border-color: #fa8b02;
-                    }
+            &.secondary-button {
+                background-color: transparent;
+                color: #fff;
+                border-color: #fff;
+                font-weight: 600;
+                font-size: 20px;
+                padding: 14px 24px;
+                &:hover {
+                    border-color: #fa8b02;
                 }
             }
         }

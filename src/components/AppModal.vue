@@ -2,7 +2,7 @@
     <div class="main">
         <div class="modal" :style="{ width: width + 'px' }">
             <div class="modal__wrapper">
-                <div class="modal__header" :class="{'with-shadow': scrolled}">
+                <div class="modal__header" :class="{ 'with-shadow': scrolled }">
                     <slot name="header">default header</slot>
                 </div>
                 <div class="modal__body">
@@ -31,21 +31,18 @@ export default {
     },
     data() {
         return {
-            scrolled: false
+            scrolled: false,
         }
     },
-    created() {
-        this.$nextTick(() => {
-            document.body.style.overflow = 'hidden'
-        })
-    },
     mounted() {
+        document.body.style.overflow = 'hidden'
+
         const modalBody = document.querySelector('.modal .modal__body')
         modalBody.addEventListener('scroll', () => {
-            modalBody.scrollTop !== 0 ? this.scrolled = true : this.scrolled = false
+            modalBody.scrollTop !== 0 ? (this.scrolled = true) : (this.scrolled = false)
         })
     },
-    destroyed() {
+    beforeDestroy() {
         document.body.style.overflow = 'auto'
     },
 }
@@ -129,7 +126,6 @@ export default {
 }
 @media only screen and (max-width: 475px) {
 }
-
 
 // Max Heights
 @media only screen and (max-height: 900px) {
