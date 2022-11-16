@@ -106,6 +106,7 @@ export default {
     methods: {
         ...mapActions('authModule', ['handleLogout']),
         onChange(item) {
+            if (localStorage.getItem('locale') === item.value) return
             localStorage.setItem('locale', item.value)
             window.location.reload()
         },
