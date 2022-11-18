@@ -486,6 +486,13 @@ export default {
 }
 ::v-deep() {
     .vd-wrapper.item__date-picker {
+        div.vd-picker__input--is-active {
+            color: #33333366 !important;
+            input {
+                font-weight: 400;
+                color: #33333366 !important;
+            }
+        }
         input {
             font-weight: 600;
             font-size: 18px !important;

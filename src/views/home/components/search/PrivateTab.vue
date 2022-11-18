@@ -47,7 +47,15 @@
                         :filterable="false"
                         :searchable="false"
                         @input="item => onChange(item, 'time')"
-                    ></v-select>
+                    >
+                        <template #open-indicator="{ attributes }">
+                            <img
+                                v-bind="attributes"
+                                src="@/assets/icons/arrow-down.svg"
+                                :alt="$t('arrowDown')"
+                            />
+                        </template>
+                    </v-select>
                 </div>
             </div>
 
@@ -68,7 +76,15 @@
                         :filterable="false"
                         :searchable="false"
                         @input="item => onChange(item, 'tour')"
-                    ></v-select>
+                    >
+                        <template #open-indicator="{ attributes }">
+                            <img
+                                v-bind="attributes"
+                                src="@/assets/icons/arrow-down.svg"
+                                :alt="$t('arrowDown')"
+                            />
+                        </template>
+                    </v-select>
                 </div>
             </div>
 
@@ -89,7 +105,15 @@
                         :filterable="false"
                         :searchable="false"
                         @input="item => onChange(item, 'types')"
-                    ></v-select>
+                    >
+                        <template #open-indicator="{ attributes }">
+                            <img
+                                v-bind="attributes"
+                                src="@/assets/icons/arrow-down.svg"
+                                :alt="$t('arrowDown')"
+                            />
+                        </template>
+                    </v-select>
                 </div>
             </div>
         </div>
@@ -192,6 +216,9 @@ export default {
                 color: #33333333;
                 font-weight: 400;
                 font-size: 18px;
+                &::placeholder {
+                    color: #33333366;
+                }
             }
             .vs__selected {
                 font-weight: 500;
@@ -227,11 +254,11 @@ export default {
         }
         &.with-value {
             ::v-deep() {
+                .vs__selected-options {
+                    display: contents;
+                }
                 input {
                     width: 0;
-                    height: 0;
-                    margin: 0;
-                    padding: 0;
                 }
             }
         }
@@ -248,10 +275,16 @@ export default {
             }
         }
         ::v-deep() {
+            div.vd-picker__input--is-active {
+                color: #33333366 !important;
+                input {
+                    font-weight: 500;
+                }
+            }
             input {
                 font-size: 18px !important;
                 &::placeholder {
-                    color: #33333366;
+                    color: #333333cc;
                 }
             }
             .vd-picker__controls {
@@ -338,6 +371,16 @@ export default {
 }
 
 @media only screen and (max-width: 991px) {
+    .item {
+        &__select {
+            width: 100%;
+        }
+        &__date {
+            &-picker {
+                padding-left: 8px;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 767px) {

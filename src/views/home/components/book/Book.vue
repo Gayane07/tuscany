@@ -256,6 +256,13 @@ export default {
                     font-size: 16px;
                     color: #333333;
                     ::v-deep() {
+                        div.vd-picker__input--is-active {
+                            color: #33333366 !important;
+                            input {
+                                font-weight: 400;
+                                color: #33333366 !important;
+                            }
+                        }
                         input::placeholder {
                             color: #333333;
                         }
